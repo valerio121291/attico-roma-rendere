@@ -1,0 +1,5 @@
+{"name": "opppp", "email": "valerio121291@hotmail.it", "message": "ciao", "__kind": "contact", "__ts": "2025-09-23T20:31:21.114023"}
+{"name": "TestCLI", "email": "test@example.com", "message": "Ciao dal test", "__kind": "contact", "__ts": "2025-09-23T20:54:10.087118"}
+{"nome": "Mario", "email": "mario@example.com", "checkin": "2025-09-25", "checkout": "2025-09-28", "adulti": 2, "bambini": 0, "neonati": 0, "__kind": "booking", "__ts": "2025-09-23T20:54:11.485537"}
+{"nome": "marco", "email": "valerio121291@hotmail.it", "checkin": "2025-09-24", "checkout": "2025-09-30", "adulti": 1, "bambini": 0, "neonati": 0, "__kind": "booking", "__ts": "2025-09-23T20:59:28.282373"}
+{"nome": "valerio pavan", "email": "pvalerio910@gmail.com", "checkin": "2025-09-25", "checkout": "2025-09-30", "adulti": 1, "bambini": 0, "neonati": 0, "__kind": "booking", "__ts": "2025-09-24T16:20:01.882574"}

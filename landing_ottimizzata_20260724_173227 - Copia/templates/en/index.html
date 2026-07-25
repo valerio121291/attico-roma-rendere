@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta name="robots" content="index, follow"><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Panoramic Penthouse with Terrace - Rome EUR | Book Now</title>
+  <!-- 🔹 META MULTILINGUA -->
+  <link rel="canonical" href="https://valerio121291.pythonanywhere.com/en/" />
+  <link rel="alternate" href="https://valerio121291.pythonanywhere.com/en/" hreflang="it" />
+  <link rel="alternate" href="https://valerio121291.pythonanywhere.com/en/en/" hreflang="en" />
+  <link rel="alternate" href="https://valerio121291.pythonanywhere.com/en/es/" hreflang="es" />
+  <link rel="alternate" href="https://valerio121291.pythonanywhere.com/en/ru/" hreflang="ru" />
+  <link rel="alternate" href="https://valerio121291.pythonanywhere.com/en/zh/" hreflang="zh-Hans" />
+  <link rel="alternate" href="https://valerio121291.pythonanywhere.com/en/" hreflang="x-default" />
+  <!-- Open Graph locale -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="ru_RU" />
+  <meta property="og:locale:alternate" content="zh_CN" />
+  <!-- (facoltativo ma utile) -->
+  <meta http-equiv="content-language" content="en" />
+<style id="inline-extracted-styles">.inline-1 {position:fixed;
+  top:10px;
+  left:10px;
+  display:flex;
+  gap:6px;
+  padding:6px 8px;
+  background:rgba(255,255,255,0.7);
+  border-radius:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+  z-index:100001; pointer-events:auto;
+  align-items:center;}
+.inline-2 {cursor:pointer;}
+.inline-3 {color:#20c997; font-weight:bold;}
+.inline-4 {margin-top:10px; background:#ffc439; color:#111; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;}</style><meta content="Affitta il nostro attico a Roma con un magnifico terrazzo e vista panoramica. Ideale per vacanze o soggiorni di lavoro nel tranquillo quartiere EUR. Wi-Fi veloce, parcheggio gratuito e tutti i comfort per un'esperienza indimenticabile." name="description"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/chatbot.css"><link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_green.css" rel="stylesheet"><link href="lang_selector_minimal/styles.css" rel="stylesheet"><style>
+h2 span[data-translate="sec_descrizione"] { color: white; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url('{{ url_for('static', filename='images/roma.jpg') }}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #ff5a5f;
+        }
+        #hero {
+            height: 600px;
+            background: center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: background-image 1s ease-in-out;
+            background-attachment: fixed;
+        }
+        .hero-content {
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .hero-content h1 {
+            color: white;
+        }
+        .cta-btn {
+            background: #ff5a5f;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .cta-btn:hover { background: #e14b4f; }
+        section {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+            text-align: center;
+        }
+        h2 { margin-bottom: 20px; color: #333; }
+        .servizi {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .servizio {
+            background: #f7f7f7;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .servizio:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .servizio i {
+            font-size: 2.5em;
+            color: #ff5a5f;
+            margin-bottom: 15px;
+        }
+        .servizio span {
+            font-weight: bold;
+            color: #333;
+        }
+        .servizio.wifi i { color: #007bff; }
+        .servizio.aria-condizionata i { color: #20c997; }
+        .servizio.cucina i { color: #ffc107; }
+        .servizio.lavatrice i { color: #6c757d; }
+        .servizio.parcheggio i { color: #dc3545; }
+        .servizio.tv i { color: #6f42c1; }
+        .servizio.ascensore i { color: #5c677d; }
+        .servizio.bollitore i { color: #d35400; }
+        .servizio.macchina-caffe i { color: #8b4513; }
+        .servizio.patio i { color: #28a745; }
+        .mappa iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+        }
+        .galleria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+        }
+        .galleria img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .galleria img:hover {
+            transform: scale(1.05);
+        }
+        .dintorni-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            text-align: center;
+        }
+        .dintorni-item {
+            background: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: white;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .dintorni-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .dintorni-item h3, .dintorni-item p {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            z-index: 10;
+        }
+        .dintorni-item-content {
+            z-index: 2;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .dintorni-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            transition: background 0.3s ease;
+            z-index: 1;
+        }
+        .dintorni-item:hover::before {
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .dintorni-colosseo {
+            background: url('{{ url_for('static', filename='images/colosseo.jpg') }}') no-repeat center center / cover;
+        }
+        .dintorni-piazza-navona {
+            background: url('{{ url_for('static', filename='images/piazza-navona.jpg') }}') no-repeat center center / cover;
+        }
+        .dintorni-trastevere {
+            background: url('{{ url_for('static', filename='images/trastevere.jpg') }}') no-repeat center center / cover;
+        }
+        .dintorni-eur-nuvola {
+            background: url('{{ url_for('static', filename='images/eur-nuvola.jpg') }}') no-repeat center center / cover;
+        }
+        .dintorni-laghetto {
+            background: url('{{ url_for('static', filename='images/laghetto.jpg') }}') no-repeat center center / cover;
+        }
+        .recensioni {
+            background: #fafafa;
+            border-left: 4px solid #ff5a5f;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .faq-item {
+            background: #f7f7f7;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .faq-item h3 {
+            text-align: left;
+            margin-top: 0;
+            color: #333;
+        }
+        .faq-item p {
+            color: #555;
+            margin-bottom: 0;
+        }
+        #booking-box {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .prenota-contenuto {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .prenota-contenuto h3 { margin: 0; color: #333; }
+        .prenota-contenuto h3 span { font-size: 14px; color: #777; }
+        .prenota-contenuto p { margin: 5px 0 10px; font-size: 14px; color: #555; }
+        .prenota-contenuto label { font-size: 13px; display: block; margin-top: 8px; }
+        .prenota-contenuto input { width: 100%; padding: 6px; margin-top: 3px; border: 1px solid #ccc; border-radius: 5px; }
+        .prenota-contenuto button { width: 100%; background: #ff5a5f; color: white; padding: 10px; border: none; border-radius: 8px; margin-top: 12px; font-size: 16px; cursor: pointer; }
+        .prenota-contenuto button:hover { background: #e14b4f; }
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 120px;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .popup-content {
+            background-color: white;
+            margin: auto;
+            padding: 20px;
+            border-radius: 12px;
+            width: 320px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .popup-content input {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .popup-content button {
+            background: #ff5a5f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .popup-content button:hover {
+            background: #e14b4f;
+        }
+        .popup-prezzo-sconto {
+            color: #ff5a5f;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .popup-prezzo-originale {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 0.9em;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: black;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #form-contatti {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        #form-contatti input, #form-contatti textarea, #form-contatti button {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            background-color: white;
+        }
+        #form-contatti button {
+            background: #ff5a5f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #form-contatti button:hover {
+            background: #e14b4f;
+        }
+        #recensione-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        #recensione-form input,
+        #recensione-form textarea,
+        #recensione-form button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        #recensione-form button {
+            background: #ff5a5f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        #recensione-form button:hover {
+            background: #e14b4f;
+        }
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+        .rating input {
+            display: none;
+        }
+        .rating label::before {
+            content: '★';
+        }
+        .rating label {
+            font-size: 2.5em;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+            margin-right: 5px;
+        }
+        .rating label:hover,
+        .rating label:hover ~ label,
+        .rating input:checked ~ label {
+            color: #ffc107;
+        }
+        .whatsapp-chat-button {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .whatsapp-chat-button a {
+            display: block;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 28px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .whatsapp-chat-button a:hover {
+            transform: scale(1.1);
+        }
+        .recensioni-widget-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .widget-placeholder {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1 1 250px;
+        }
+        .widget-placeholder a {
+            color: #ff5a5f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .widget-placeholder a:hover {
+            text-decoration: underline;
+        }
+        .regole-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .regole-item {
+            background: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            flex: 1 1 400px;
+        }
+        .regole-item ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .regole-item li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+/* Pulsante robot - con animazione "salta" */
+.chatbot-toggle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.chatbot-toggle:hover {
+    transform: scale(1.1);
+}
+.robot-icon {
+    font-size: 32px;
+    animation: robotJump 1.5s ease-in-out infinite;
+}
+@keyframes robotJump {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    30% { transform: translateY(-12px) rotate(-5deg); }
+    50% { transform: translateY(-8px) rotate(5deg); }
+    70% { transform: translateY(-12px) rotate(-5deg); }
+}
+        .popup-offer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none; /* Inizialmente nascosto */
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+        .popup-offer-content {
+            background: #fff;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            position: relative;
+            max-width: 400px;
+            animation: fadeIn 0.5s;
+        }
+        .popup-offer-content h2 {
+            color: #ff5a5f;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        .popup-offer-content p {
+            color: #555;
+            font-size: 1.1em;
+        }
+        .close-offer {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2em;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+        }
+        .close-offer:hover {
+            color: #333;
+        }
+        .cta-btn-offer {
+            background: #ff5a5f;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .cta-btn-offer:hover {
+            background: #e14b4f;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            #booking-box {
+                position: static;
+                width: 100%;
+                margin-top: 20px;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            section {
+                padding: 20px 10px;
+            }
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 5px 0;
+            }
+            .regole-container {
+                flex-direction: column;
+            }
+            .widget-placeholder {
+                margin: 10px 0;
+            }
+            .popup-offer-content {
+                max-width: 90%;
+            }
+        }
+        .lightbox-prev, .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 48px;
+            background: rgba(0,0,0,0.4);
+            border: none;
+            color: #fff;
+            padding: 10px 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            z-index: 1002;
+        }
+        .lightbox-prev { left: 10px; }
+        .lightbox-next { right: 10px; }
+        .lightbox-prev:hover, .lightbox-next:hover { background: rgba(0,0,0,0.6); }
+/* --- Ensure lightbox close button is visible on the left --- */
+.lightbox-close{
+  position: fixed !important;
+  top: 16px !important;
+  left: 16px !important;   /* move to the left */
+  right: auto !important;
+  font-size: 32px !important;
+  font-weight: 700;
+  color: #fff !important;
+  background: rgba(0,0,0,0.45);
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 10002; /* higher than language selector */
+  user-select: none;
+}
+/* Slight shadow for visibility over photos */
+.lightbox-close{ box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+</style><style>
+/* Flags inside existing language <select> and current flag on the closed control */
+select.lang-select-flags option{
+  background-repeat:no-repeat;background-size:20px 14px;background-position:8px 50%;padding-left:36px;
+}
+select.lang-select-flags{
+  --flag-bg:none;background-image:var(--flag-bg);
+  background-repeat:no-repeat;background-size:20px 14px;background-position:8px 50%;padding-left:36px;
+}
+</style><style>
+  .lang-dropdown {
+    position: fixed; top: 10px; right: 10px; z-index: 2147483647;
+    background: rgba(0,0,0,0.65); backdrop-filter: saturate(1.2) blur(2px);
+    border-radius: 10px; padding: 6px 8px;
+  }
+  .lang-dropdown select {
+    background: transparent; border: 1px solid rgba(255,255,255,0.5);
+    color: #fff; font: 600 13px/1.2 system-ui, Arial, sans-serif;
+    padding: 6px 10px; border-radius: 8px; cursor: pointer;
+  }
+  .lang-dropdown option { color: #000; }
+</style><style>
+#langDropdownWrap{
+  position:fixed; top:10px; right:10px; z-index:2147483647;
+  background:rgba(0,0,0,0.7); border-radius:8px; padding:4px;
+}
+#langDropdown{
+  font-size:14px; padding:4px; border-radius:6px; cursor:pointer;
+}
+</style><style>
+  #langSwitcher{
+    position:fixed; top:10px; left:10px; z-index:2147483647;
+    display:flex; gap:6px; padding:6px 8px;
+    background:rgba(0,0,0,.6); border-radius:12px; backdrop-filter:saturate(1.2) blur(2px);
+  }
+  #langSwitcher button{
+    border:none; cursor:pointer; font:600 12px/1.2 system-ui, Arial, sans-serif;
+    padding:6px 8px; border-radius:8px; color:#fff; background:#444; letter-spacing:.3px;
+  }
+  #langSwitcher button.active{ outline:2px solid rgba(255,255,255,.8); }
+</style><style>
+.flags, .flags-left, .lang-left, .lang-badge, .lang-pill, .lang-chip { display:none !important; }
+</style><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;margin:0;background-image:url(/static/images/roma.jpg);background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-position:center;color:#333}
+.lang-selector{position:fixed;top:15px;right:15px;z-index:999999;display:flex;gap:6px;background:rgba(0,0,0,0.8);backdrop-filter:blur(12px);padding:8px 14px;border-radius:50px;border:1px solid rgba(255,255,255,0.15);box-shadow:0 8px 32px rgba(0,0,0,0.4)}
+.lang-btn{background:transparent;border:none;color:rgba(255,255,255,0.7);padding:6px 14px;border-radius:30px;cursor:pointer;font-size:13px;font-weight:600;transition:all .3s;display:flex;align-items:center;gap:8px}
+.lang-btn .flag{font-size:20px}
+.lang-btn:hover{background:rgba(255,255,255,0.15);color:#fff}
+.lang-btn.active{background:#ff5a5f;color:#fff;box-shadow:0 4px 12px rgba(255,90,95,0.4)}
+.whatsapp-float{position:fixed;bottom:30px;right:30px;z-index:999}
+.whatsapp-float a{display:block;width:65px;height:65px;background:#25d366;color:#fff;border-radius:50%;text-align:center;line-height:65px;font-size:35px;box-shadow:0 6px 20px rgba(37,211,102,0.4);transition:all .3s;text-decoration:none;position:relative;animation:pulse 2s infinite}
+.whatsapp-float a:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,0.6)}
+.whatsapp-float .whatsapp-tooltip{position:absolute;bottom:80px;right:0;background:rgba(0,0,0,0.8);color:#fff;padding:8px 14px;border-radius:8px;font-size:13px;white-space:nowrap;opacity:0;transition:opacity .3s;pointer-events:none}
+.whatsapp-float a:hover .whatsapp-tooltip{opacity:1}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.4)}70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+nav{display:flex;justify-content:center;background:rgba(0,0,0,0.7);padding:15px;position:absolute;top:0;left:0;width:100%;z-index:100;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;padding:10px 15px;margin:0 5px;font-weight:bold;border-radius:5px;transition:background .3s;font-size:14px}
+nav a:hover{background:#ff5a5f}
+#hero{height:600px;background:center/cover no-repeat;position:relative;display:flex;align-items:center;justify-content:center;color:#fff;transition:background-image 1s ease-in-out;background-attachment:fixed}
+.hero-content{text-align:center;background:rgba(0,0,0,0.5);padding:30px 40px;border-radius:16px;max-width:90%}
+.hero-content h1{color:#fff;font-size:2.5em;margin-bottom:15px}
+.cta-btn{background:#ff5a5f;color:#fff;padding:14px 30px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block;transition:all .3s}
+.cta-btn:hover{background:#e14b4f;transform:translateY(-2px)}
+section{padding:40px 20px;max-width:1100px;margin:20px auto;background:rgba(255,255,255,0.92);border-radius:12px;backdrop-filter:blur(4px)}
+h1,h2,h3{color:#333;text-align:center}
+h2{font-size:2em;margin-bottom:25px;position:relative}
+h2:after{content:"";display:block;width:60px;height:3px;background:#ff5a5f;margin:10px auto 0}
+.servizi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px}
+.servizio{background:#f7f7f7;padding:20px 15px;border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:all .3s}
+.servizio:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.15)}
+.servizio i{font-size:2.5em;margin-bottom:12px}
+.servizio.wifi i{color:#007bff}
+.servizio.aria-condizionata i{color:#20c997}
+.servizio.cucina i{color:#ffc107}
+.servizio.lavatrice i{color:#6c757d}
+.servizio.parcheggio i{color:#dc3545}
+.servizio.tv i{color:#6f42c1}
+.servizio.ascensore i{color:#5c677d}
+.servizio.bollitore i{color:#d35400}
+.servizio.macchina-caffe i{color:#8b4513}
+.servizio.patio i{color:#28a745}
+.servizio span{font-weight:600;color:#333;font-size:14px}
+.galleria{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.galleria img{width:100%;height:280px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform .3s}
+.galleria img:hover{transform:scale(1.03)}
+.dintorni-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.dintorni-item{background:#f7f7f7;padding:20px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);position:relative;overflow:hidden;text-decoration:none;color:#fff;min-height:250px;display:flex;flex-direction:column;justify-content:flex-end;transition:all .3s}
+.dintorni-item:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.2)}
+.dintorni-item::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);transition:background .3s;z-index:1}
+.dintorni-item:hover::before{background:rgba(0,0,0,0.6)}
+.dintorni-item h3,.dintorni-item p{color:#fff;text-shadow:2px 2px 4px rgba(0,0,0,0.7);z-index:2;position:relative}
+.dintorni-item-content{z-index:2;position:relative;padding-bottom:10px}
+.dintorni-colosseo{background:url(/static/images/colosseo.jpg) center/cover no-repeat}
+.dintorni-piazza-navona{background:url(/static/images/piazza-navona.jpg) center/cover no-repeat}
+.dintorni-trastevere{background:url(/static/images/trastevere.jpg) center/cover no-repeat}
+.dintorni-eur-nuvola{background:url(/static/images/eur-nuvola.jpg) center/cover no-repeat}
+.dintorni-laghetto{background:url(/static/images/laghetto.jpg) center/cover no-repeat}
+.mappa iframe{width:100%;height:300px;border:none;border-radius:10px}
+.prenota-contenuto{display:flex;flex-direction:column;align-items:center;max-width:400px;margin:0 auto;width:100%}
+.prenota-contenuto h3{font-size:2em;color:#333;margin:0}
+.prenota-contenuto h3 span{font-size:14px;color:#777}
+.prenota-contenuto label{font-size:14px;display:block;margin-top:12px;font-weight:600;width:100%;text-align:left}
+.prenota-contenuto input{width:100%;padding:10px;margin-top:4px;border:2px solid #e0e0e0;border-radius:8px;font-size:16px;transition:border-color .3s}
+.prenota-contenuto input:focus{border-color:#ff5a5f;outline:none}
+.prenota-contenuto button{width:100%;background:#ff5a5f;color:#fff;padding:14px;border:none;border-radius:8px;margin-top:16px;font-size:18px;font-weight:bold;cursor:pointer;transition:all .3s}
+.prenota-contenuto button:hover{background:#e14b4f;transform:translateY(-2px)}
+.recensioni{background:#fafafa;border-left:4px solid #ff5a5f;padding:15px;margin-bottom:10px;border-radius:6px}
+.recensioni strong{color:#333}
+.faq-item{background:#f7f7f7;padding:18px;border-radius:10px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
+.faq-item h3{text-align:left;margin-top:0;color:#333;font-size:1.1em}
+.faq-item p,.faq-item li{color:#555}
+.faq-item ul{padding-left:20px;margin:10px 0}
+.popup{display:none;position:fixed;z-index:1000;padding-top:80px;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.6)}
+.popup-content{background:#fff;margin:auto;padding:30px;border-radius:16px;width:90%;max-width:400px;box-shadow:0 8px 40px rgba(0,0,0,0.3);text-align:center;position:relative;animation:fadeIn .3s}
+.popup-content input{width:100%;padding:10px;margin:8px 0;border:2px solid #e0e0e0;border-radius:8px;font-size:14px}
+.popup-content input:focus{border-color:#ff5a5f;outline:none}
+.popup-content button{background:#ff5a5f;color:#fff;padding:12px 24px;border:none;border-radius:8px;cursor:pointer;font-weight:bold;transition:all .3s;width:100%;margin-top:8px}
+.popup-content button:hover{background:#e14b4f}
+.close{position:absolute;top:12px;right:16px;font-size:28px;font-weight:bold;color:#aaa;cursor:pointer;transition:color .3s}
+.close:hover{color:#333}
+.popup-prezzo-sconto{color:#ff5a5f;font-size:1.8em;font-weight:bold}
+.popup-prezzo-originale{text-decoration:line-through;color:#999;font-size:.9em}
+.lightbox{display:none;position:fixed;z-index:1001;padding-top:60px;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.92)}
+.lightbox-content{display:flex;align-items:center;justify-content:center;height:100%;position:relative}
+.lightbox-content img{max-width:90%;max-height:80vh;object-fit:contain;border-radius:8px}
+.lightbox-close{position:fixed;top:16px;left:16px;font-size:32px;color:#fff;cursor:pointer;z-index:1002;background:rgba(0,0,0,0.5);width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .3s}
+.lightbox-close:hover{background:rgba(255,255,255,0.2)}
+.lightbox-prev,.lightbox-next{position:fixed;top:50%;transform:translateY(-50%);font-size:40px;background:rgba(0,0,0,0.4);border:none;color:#fff;padding:16px 20px;cursor:pointer;border-radius:8px;z-index:1002;transition:background .3s}
+.lightbox-prev:hover,.lightbox-next:hover{background:rgba(0,0,0,0.7)}
+.lightbox-prev{left:16px}
+.lightbox-next{right:16px}
+.popup-offer{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center;z-index:1001}
+.popup-offer-content{background:#fff;padding:35px;text-align:center;border-radius:16px;max-width:420px;width:90%;position:relative;animation:fadeIn .5s;box-shadow:0 8px 40px rgba(0,0,0,0.3)}
+.popup-offer-content h2{color:#ff5a5f;margin-top:0;font-size:1.8em}
+.popup-offer-content p{color:#555;font-size:1.1em}
+.close-offer{position:absolute;top:10px;right:16px;font-size:28px;font-weight:bold;color:#888;cursor:pointer}
+.close-offer:hover{color:#333}
+.cta-btn-offer{background:#ff5a5f;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block;transition:all .3s}
+.cta-btn-offer:hover{background:#e14b4f;transform:translateY(-2px)}
+#contatti{text-align:center}
+#contatti p{margin:8px 0;font-size:15px}
+#contatti a{color:#ff5a5f;text-decoration:none}
+#contatti a:hover{text-decoration:underline}
+#form-contatti,#recensione-form{display:flex;flex-direction:column;gap:12px;max-width:500px;margin:20px auto 0}
+#form-contatti input,#form-contatti textarea,#recensione-form input,#recensione-form textarea{padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;transition:border-color .3s}
+#form-contatti input:focus,#form-contatti textarea:focus,#recensione-form input:focus,#recensione-form textarea:focus{border-color:#ff5a5f;outline:none}
+#form-contatti button,#recensione-form button{background:#ff5a5f;color:#fff;padding:12px;border:none;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer;transition:all .3s}
+#form-contatti button:hover,#recensione-form button:hover{background:#e14b4f}
+.rating{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:4px;margin-bottom:10px}
+.rating input{display:none}
+.rating label{font-size:2.5em;color:#ddd;cursor:pointer;transition:color .3s}
+.rating label:hover,.rating label:hover~label,.rating input:checked~label{color:#ffc107}
+.recensioni-widget-container{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.widget-placeholder{background:#fff;padding:20px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);text-align:center;flex:1 1 200px;max-width:280px}
+.widget-placeholder a{color:#ff5a5f;text-decoration:none;font-weight:bold}
+.widget-placeholder a:hover{text-decoration:underline}
+.regole-container{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.regole-item{background:#f7f7f7;padding:20px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.05);flex:1 1 300px}
+.regole-item ul{list-style:none;padding:0}
+.regole-item li{padding:8px 0;border-bottom:1px solid #e0e0e0}
+.regole-item li:last-child{border-bottom:none}
+footer{background:rgba(0,0,0,0.85);color:#fff;text-align:center;padding:30px 20px;margin-top:20px}
+.footer-content p{margin:5px 0}
+#back-to-top{position:fixed;bottom:100px;right:30px;background:#ff5a5f;color:#fff;border:none;border-radius:50%;width:50px;height:50px;font-size:24px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all .3s;z-index:100;display:none}
+#back-to-top:hover{transform:scale(1.1);background:#e14b4f}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){
+    .lang-selector{top:10px;right:10px;padding:6px 10px;gap:4px;flex-wrap:wrap}
+    .lang-btn{font-size:11px;padding:4px 10px}
+    .lang-btn .flag{font-size:16px}
+    nav{flex-direction:column;align-items:center;padding:10px;position:relative}
+    nav a{margin:3px 0;padding:8px 12px;font-size:13px}
+    #hero{height:400px;background-attachment:scroll}
+    .hero-content h1{font-size:1.6em}
+    .hero-content{padding:20px}
+    section{padding:20px 12px;margin:12px}
+    h2{font-size:1.5em}
+    .galleria img{height:200px}
+    .servizi{grid-template-columns:repeat(2,1fr)}
+    .popup-content{width:95%;padding:20px}
+    .popup-offer-content{width:95%;padding:20px}
+    .dintorni-grid{grid-template-columns:1fr}
+    .whatsapp-float{bottom:20px;right:20px}
+    .whatsapp-float a{width:55px;height:55px;line-height:55px;font-size:28px}
+}
+@media(max-width:480px){
+    .servizi{grid-template-columns:1fr 1fr}
+    .servizio{padding:12px}
+    .servizio i{font-size:1.8em}
+    .hero-content h1{font-size:1.3em}
+    .hero-content{padding:15px}
+    .lang-selector{top:6px;right:6px;padding:4px 8px;gap:2px}
+    .lang-btn{font-size:9px;padding:3px 7px}
+    .lang-btn .flag{font-size:13px}
+    .whatsapp-float{bottom:15px;right:15px}
+    .whatsapp-float a{width:48px;height:48px;line-height:48px;font-size:24px}
+    .whatsapp-float .whatsapp-tooltip{display:none}
+}
+</style>
+</head><body>
+<!-- CHATBOT -->
+<div class="chatbot-container">
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <span class="chatbot-title">🤖 Assistente Attico Roma</span>
+            <button class="chatbot-close-btn" id="chatbotCloseBtn">✕</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="msg bot">
+                <div class="msg-avatar">🤖</div>
+                <div class="msg-content">
+                    Ciao! Sono il tuo assistente virtuale.<br>
+                    Chiedimi tutto sull'attico, Roma, ristoranti e mezzi di trasporto! 🏛️
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbotInput" placeholder="Scrivi la tua domanda..." class="chatbot-input">
+            <button id="chatbotSendBtn" class="chatbot-send-btn">➤</button>
+        </div>
+    </div>
+    <button class="chatbot-toggle-btn" id="chatbotToggleBtn">
+        <span class="robot-icon">🤖</span>
+        <span class="pulse-ring"></span>
+    </button>
+</div>
+<!-- Language Selector con FLAG -->
+<div class="lang-selector" id="langSelector">
+    <button class="lang-btn active" data-lang="it"><span class="flag">🇮🇹</span> IT</button>
+    <button class="lang-btn" data-lang="en"><span class="flag">🇬🇧</span> EN</button>
+    <button class="lang-btn" data-lang="es"><span class="flag">🇪🇸</span> ES</button>
+    <button class="lang-btn" data-lang="ru"><span class="flag">🇷🇺</span> RU</button>
+    <button class="lang-btn" data-lang="zh"><span class="flag">🇨🇳</span> ZH</button>
+</div>
+<header id="hero">
+    <nav>
+        <a data-translate="nav_descrizione" href="#descrizione">Descrizione</a>
+        <a data-translate="nav_servizi" href="#servizi">Servizi</a>
+        <a data-translate="nav_galleria" href="#galleria">Galleria</a>
+        <a data-translate="nav_dintorni" href="#dintorni">Dintorni</a>
+        <a data-translate="nav_recensioni" href="#recensioni">Recensioni</a>
+        <a data-translate="nav_contatti" href="#contatti">Contatti</a>
+    </nav>
+    <div class="hero-content">
+        <h1 data-translate="hero_title">Accogliente attico con terrazzo panoramico</h1>
+        <p data-translate="hero_subtitle">Confort e vista mozzafiato su Roma</p>
+        <a class="cta-btn" href="#booking-box" data-translate="hero_button">Prenota ora</a>
+    </div>
+</header>
+<section id="descrizione">
+    <h2 data-translate="sec_descrizione">Descrizione dell'alloggio</h2>
+    <p data-translate="descr_par1">Benvenuti nel nostro accogliente attico con terrazzo panoramico a Roma, situato al 7º piano di un edificio tranquillo nei pressi del quartiere EUR. Luminoso e accogliente, l'alloggio è la soluzione ideale per chi cerca un soggiorno straordinario in una zona residenziale e sicura, lontano dal caos della città ma a pochi minuti dai principali punti di interesse. L'attico è arredato con gusto e offre tutti i comfort per rendere la tua vacanza o il tuo viaggio di lavoro indimenticabile.</p>
+</section>
+<section id="servizi">
+    <h2 data-translate="sec_servizi">Servizi dell'attico</h2>
+    <div class="servizi">
+        <div class="servizio wifi"><i class="fas fa-wifi"></i><span data-translate="srv_wifi">Wi-Fi veloce</span></div>
+        <div class="servizio aria-condizionata"><i class="fas fa-snowflake"></i><span data-translate="srv_aria">Aria condizionata</span></div>
+        <div class="servizio cucina"><i class="fas fa-utensils"></i><span data-translate="srv_cucina">Cucina attrezzata</span></div>
+        <div class="servizio lavatrice"><i class="fas fa-tshirt"></i><span data-translate="srv_lavatrice">Lavatrice</span></div>
+        <div class="servizio parcheggio"><i class="fas fa-parking"></i><span data-translate="srv_parcheggio">Parcheggio gratuito</span></div>
+        <div class="servizio tv"><i class="fas fa-tv"></i><span data-translate="srv_tv">TV a schermo piatto</span></div>
+        <div class="servizio ascensore"><i class="fas fa-building"></i><span data-translate="srv_ascensore">Ascensore</span></div>
+        <div class="servizio bollitore"><i class="fas fa-mug-hot"></i><span data-translate="srv_bollitore">Bollitore</span></div>
+        <div class="servizio macchina-caffe"><i class="fas fa-coffee"></i><span data-translate="srv_caffe">Macchina del caffè</span></div>
+        <div class="servizio patio"><i class="fas fa-door-open"></i><span data-translate="srv_patio">Patio o balcone privato</span></div>
+    </div>
+</section>
+<section id="mappa">
+    <h2>Posizione</h2>
+    <div class="mappa">
+        <iframe src="https://www.google.com/maps?q=via+guido+ascoli+fonte+laurentina+roma&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+</section>
+<section id="galleria">
+    <h2 data-translate="sec_galleria">Galleria fotografica</h2>
+    <div class="galleria">
+        <img loading="lazy" src="/static/images/image1.jpg" alt="Foto 1">
+        <img loading="lazy" src="/static/images/image2.jpg" alt="Foto 2">
+        <img loading="lazy" src="/static/images/image3.jpg" alt="Foto 3">
+        <img loading="lazy" src="/static/images/image4.jpg" alt="Foto 4">
+        <img loading="lazy" src="/static/images/image5.jpg" alt="Foto 5">
+        <img loading="lazy" src="/static/images/image6.jpg" alt="Foto 6">
+        <img loading="lazy" src="/static/images/image7.jpg" alt="Foto 7">
+        <img loading="lazy" src="/static/images/image8.jpg" alt="Foto 8">
+        <img loading="lazy" src="/static/images/image9.jpg" alt="Foto 9">
+    </div>
+</section>
+<section id="dintorni">
+    <h2 data-translate="sec_dintorni">Cosa fare nei dintorni</h2>
+    <div class="dintorni-grid">
+        <a class="dintorni-item dintorni-colosseo" href="https://www.google.com/search?q=colosseo+roma" target="_blank">
+            <div class="dintorni-item-content">
+                <h3 data-translate="d1_t">Il Colosseo</h3>
+                <p data-translate="d1_p">A soli 20 minuti di autobus.</p>
+            </div>
+        </a>
+        <a class="dintorni-item dintorni-piazza-navona" href="https://www.google.com/search?q=piazza+navona+roma" target="_blank">
+            <div class="dintorni-item-content">
+                <h3 data-translate="d2_t">Piazza Navona</h3>
+                <p data-translate="d2_p">A 30 minuti a piedi o in autobus.</p>
+            </div>
+        </a>
+        <a class="dintorni-item dintorni-trastevere" href="https://www.google.com/search?q=quartiere+trastevere+roma" target="_blank">
+            <div class="dintorni-item-content">
+                <h3 data-translate="d3_t">Quartiere Trastevere</h3>
+                <p data-translate="d3_p">15 minuti con i mezzi pubblici.</p>
+            </div>
+        </a>
+        <a class="dintorni-item dintorni-eur-nuvola" href="https://www.google.com/search?q=nuvola+eur+roma" target="_blank">
+            <div class="dintorni-item-content">
+                <h3 data-translate="d4_t">La Nuvola dell'EUR</h3>
+                <p data-translate="d4_p">10 minuti in auto o bus.</p>
+            </div>
+        </a>
+        <a class="dintorni-item dintorni-laghetto" href="https://www.google.com/search?q=laghetto+eur+roma" target="_blank">
+            <div class="dintorni-item-content">
+                <h3 data-translate="d5_t">Laghetto dell'EUR</h3>
+                <p data-translate="d5_p">10 minuti a piedi.</p>
+            </div>
+        </a>
+    </div>
+</section>
+<section id="recensioni">
+    <h2 data-translate="sec_recensioni">Recensioni degli ospiti</h2>
+    <div class="recensioni">
+        <strong>Marco</strong> ⭐⭐⭐⭐⭐
+        <p data-translate="rev_1">Bellissimo attico, pulito e con vista spettacolare! Tornerò sicuramente.</p>
+    </div>
+    <div class="recensioni">
+        <strong>Giulia</strong> ⭐⭐⭐⭐
+        <p data-translate="rev_2">Posizione comoda, host gentile e disponibile.</p>
+    </div>
+    <div class="recensioni">
+        <strong>Luca</strong> ⭐⭐⭐⭐⭐
+        <p data-translate="rev_3">Tutto perfetto! Il terrazzo è il punto forte della casa.</p>
+    </div>
+    <h3 data-translate="recensione_lascia">Lascia la tua recensione</h3>
+    <form id="recensione-form">
+        <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stelle"></label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stelle"></label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stelle"></label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stelle"></label>
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 stella"></label>
+        </div>
+        <input data-ph-key="rec_ph_nome" id="nome-recensione" placeholder="Il tuo nome" type="text">
+        <textarea data-ph-key="rec_ph_testo" id="testo-recensione" placeholder="Scrivi qui la tua recensione..."></textarea>
+        <button type="submit" data-translate="rec_invia">Invia recensione</button>
+    </form>
+</section>
+<section id="recensioni-esterne">
+    <h2 data-translate="ext_reviews_title">Dicono di noi</h2>
+    <p data-translate="ext_reviews_subtitle">Leggi le recensioni verificate dei nostri ospiti su altre piattaforme.</p>
+    <div class="recensioni-widget-container">
+        <div class="widget-placeholder">
+            <h3 data-translate="ext_reviews_airbnb">Recensioni Airbnb</h3>
+            <p>⭐ 4.97 / 5</p>
+            <a data-translate="ext_reviews_read_more_airbnb" href="https://www.airbnb.it/" target="_blank">Leggi di più su Airbnb</a>
+        </div>
+        <div class="widget-placeholder">
+            <h3 data-translate="ext_reviews_booking">Recensioni Booking.com</h3>
+            <p>⭐ 9.7 / 10</p>
+            <a data-translate="ext_reviews_read_more_booking" href="https://www.booking.com/" target="_blank">Leggi di più su Booking</a>
+        </div>
+        <div class="widget-placeholder">
+            <h3 data-translate="ext_reviews_google">Recensioni Google</h3>
+            <p>⭐ 4.9 / 5</p>
+            <a data-translate="ext_reviews_read_more_google" href="https://www.google.com/search?q=attico+via+guido+ascoli+roma" target="_blank">Leggi di più su Google</a>
+        </div>
+    </div>
+</section>
+<section id="regole">
+    <h2 data-translate="sec_regole">Regole della casa</h2>
+    <div class="regole-container">
+        <div class="regole-item">
+            <h3 data-translate="house_rules_title">Regole della Casa</h3>
+            <ul>
+                <li data-translate="no_smoking">Non è consentito fumare all'interno.</li>
+                <li data-translate="no_parties">Non è possibile organizzare feste.</li>
+                <li data-translate="turn_off_ac">Spegni l'aria condizionata quando esci.</li>
+            </ul>
+        </div>
+        <div class="regole-item">
+            <h3 data-translate="welcome_guide">Guida di Benvenuto</h3>
+            <ul>
+                <li data-translate="checkin_instructions"><strong>Istruzioni Check-in:</strong> Dettagli inviati via email il giorno prima.</li>
+                <li data-translate="emergency_numbers"><strong>Numeri Utili:</strong> Emergenza 112</li>
+                <li data-translate="tips"><strong>Consigli:</strong> Visita il Ristorante Osteria Sanmarzano.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section id="faq">
+    <h2 data-translate="faq_title">Domande Frequenti</h2>
+    <div class="faq-item">
+        <h3 data-translate="faq_q1_title">1. Tassa di soggiorno: cos'è e come si paga?</h3>
+        <p data-translate="faq_q1_body">A Roma è obbligatoria la tassa di soggiorno. L'importo varia a seconda della tipologia di alloggio e deve essere pagato in contanti all'arrivo.</p>
+    </div>
+    <div class="faq-item">
+        <h3 data-translate="faq_q2_title">2. Cosa posso fare per muovermi in città?</h3>
+        <ul>
+            <li data-translate="faq_q2_metro">Metro: Linea B, fermata Laurentina.</li>
+            <li data-translate="faq_q2_bus">Autobus e Tram: Rete molto estesa.</li>
+            <li data-translate="faq_q2_taxi">Taxi: App FreeNow o Radiotaxi 06 3570.</li>
+            <li data-translate="faq_q2_bike">Bici e Monopattini: Lime e Helbiz.</li>
+        </ul>
+    </div>
+    <div class="faq-item">
+        <h3 data-translate="faq_q3_title">3. Ci sono regole di comportamento o consigli utili?</h3>
+        <ul>
+            <li data-translate="faq_q3_water">Acqua potabile dalle fontanelle.</li>
+            <li data-translate="faq_q3_monuments">Rispettare i monumenti.</li>
+            <li data-translate="faq_q3_dress">Abbigliamento nei luoghi di culto.</li>
+        </ul>
+    </div>
+</section>
+<section id="booking-box">
+    <div class="prenota-contenuto">
+        <h3>€120 <span data-translate="price_night">/ notte</span></h3>
+        <p data-translate="guests_info">Ospiti: fino a un massimo di 3 persone</p>
+        <label data-translate="dates_title">Seleziona le date:</label>
+        <input id="calendar-input" data-ph-key="dates_placeholder" placeholder="Seleziona le date" type="text">
+        <label data-translate="guests_label">Ospiti (Max 3):</label>
+        <input id="ospiti" max="3" min="1" type="number" value="1">
+        <button id="btnPrenota" data-translate="hero_button">Prenota ora</button>
+    </div>
+</section>
+<div class="popup-offer" id="offer-popup">
+    <div class="popup-offer-content">
+        <span class="close-offer" id="btnCloseOffer">×</span>
+        <h2 data-translate="offer_title">🎉 Offerta Speciale! 🎉</h2>
+        <p data-translate="offer_text">Prenota ora direttamente dal nostro sito e ricevi uno sconto del 10% sul tuo soggiorno!</p>
+        <a class="cta-btn-offer" href="#booking-box" id="btnApplyOffer" data-translate="offer_cta">Approfitta dell'offerta</a>
+    </div>
+</div>
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="close" id="btnChiudiPopup">×</span>
+        <h2 data-translate="booking_title">Conferma prenotazione</h2>
+        <p id="date-info"></p>
+        <p id="totale-prezzo-info"></p>
+        <p id="sconto-info"></p>
+        <input data-ph-key="booking_name" placeholder="Il tuo nome" type="text">
+        <input data-ph-key="booking_email" placeholder="La tua email" type="email">
+        <button id="btnInviaPrenotazione" data-translate="booking_send">Invia richiesta</button>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="pvalerio910@gmail.com">
+            <input type="hidden" name="item_name" value="Prenotazione notte">
+            <input type="hidden" name="amount" value="120">
+            <input type="hidden" name="currency_code" value="EUR">
+            <button type="submit" data-translate="booking_paypal">Paga con PayPal</button>
+        </form>
+    </div>
+</div>
+<div class="lightbox" id="myLightbox">
+    <span class="lightbox-close">×</span>
+    <div class="lightbox-content">
+        <button class="lightbox-prev">‹</button>
+        <img id="lightboxImage" src="">
+        <button class="lightbox-next">›</button>
+    </div>
+</div>
+<section id="contatti">
+    <h2 data-translate="sec_contatti">Contatti</h2>
+    <p>📍 Indirizzo: Via Guido Ascoli, Fonte Laurentina, Roma</p>
+    <p>📞 Telefono: <a href="tel:+393714737368">+39 371 4737368</a></p>
+    <p>✉ Email: <a href="mailto:katia.popova13@gmail.com">katia.popova13@gmail.com</a></p>
+    <!-- WHATSAPP (a destra) -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/393294915013?text=Salve%2C%20vorrei%20informazioni%20sul%20vostro%20attico%20a%20Roma" target="_blank" aria-label="Chatta su WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">Chatta con noi!</span>
+        </a>
+    </div>
+</div>
+            </div>
+        </div>
+</div>
+    <h3 data-translate="contatto_modulo">Modulo di contatto</h3>
+    <form id="form-contatti">
+        <input data-ph-key="ph_nome" name="nome" placeholder="Il tuo nome" type="text">
+        <input data-ph-key="ph_email" name="email" placeholder="La tua email" type="email">
+        <textarea data-ph-key="ph_messaggio" name="messaggio" placeholder="Il tuo messaggio" rows="4"></textarea>
+        <button type="submit" data-translate="contatto_invia">Invia messaggio</button>
+    </form>
+</section>
+<footer>
+    <div class="footer-content">
+        <p>© 2025 Attico Roma. Tutti i diritti riservati.</p>
+        <p>Realizzato con amore a Roma ❤️</p>
+    </div>
+</footer>
+<button id="back-to-top">↑</button>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_green.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.4.0/ical.min.js"></script>
+<script>
+(function() {
+    "use strict";
+    var translations = {
+        it: {
+            nav_descrizione:"Descrizione", nav_servizi:"Servizi", nav_galleria:"Galleria",
+            nav_dintorni:"Dintorni", nav_recensioni:"Recensioni", nav_contatti:"Contatti",
+            hero_title:"Accogliente attico con terrazzo panoramico",
+            hero_subtitle:"Confort e vista mozzafiato su Roma",
+            hero_button:"Prenota ora",
+            sec_descrizione:"Descrizione dell'alloggio",
+            sec_servizi:"Servizi dell'attico",
+            sec_galleria:"Galleria fotografica",
+            sec_dintorni:"Cosa fare nei dintorni",
+            sec_recensioni:"Recensioni degli ospiti",
+            recensione_lascia:"Lascia la tua recensione",
+            contatto_modulo:"Modulo di contatto",
+            sec_contatti:"Contatti",
+            ph_nome:"Il tuo nome",
+            ph_email:"La tua email",
+            ph_messaggio:"Il tuo messaggio",
+            rec_ph_nome:"Il tuo nome",
+            rec_ph_testo:"Scrivi qui la tua recensione...",
+            contatto_invia:"Invia messaggio",
+            rec_invia:"Invia recensione",
+            srv_wifi:"Wi-Fi veloce",
+            srv_aria:"Aria condizionata",
+            srv_cucina:"Cucina attrezzata",
+            srv_lavatrice:"Lavatrice",
+            srv_parcheggio:"Parcheggio gratuito",
+            srv_tv:"TV a schermo piatto",
+            srv_ascensore:"Ascensore",
+            srv_bollitore:"Bollitore",
+            srv_caffe:"Macchina del caffè",
+            srv_patio:"Patio o balcone privato",
+            d1_t:"Il Colosseo",
+            d2_t:"Piazza Navona",
+            d3_t:"Quartiere Trastevere",
+            d4_t:"La Nuvola dell'EUR",
+            d5_t:"Laghetto dell'EUR",
+            d1_p:"A soli 20 minuti di autobus.",
+            d2_p:"A 30 minuti a piedi o in autobus.",
+            d3_p:"15 minuti con i mezzi pubblici.",
+            d4_p:"10 minuti in auto o bus.",
+            d5_p:"10 minuti a piedi.",
+            descr_par1:"Benvenuti nel nostro accogliente attico con terrazzo panoramico a Roma, situato al 7º piano di un edificio tranquillo nei pressi del quartiere EUR. Luminoso e accogliente, l'alloggio è la soluzione ideale per chi cerca un soggiorno straordinario in una zona residenziale e sicura, lontano dal caos della città ma a pochi minuti dai principali punti di interesse.",
+            sec_dicono:"Dicono di noi",
+            sec_regole:"Regole della casa",
+            ext_reviews_title:"Dicono di noi",
+            ext_reviews_subtitle:"Leggi le recensioni verificate dei nostri ospiti su altre piattaforme.",
+            ext_reviews_airbnb:"Recensioni Airbnb",
+            ext_reviews_booking:"Recensioni Booking.com",
+            ext_reviews_google:"Recensioni Google",
+            ext_reviews_read_more_airbnb:"Leggi di più su Airbnb",
+            ext_reviews_read_more_booking:"Leggi di più su Booking",
+            ext_reviews_read_more_google:"Leggi di più su Google",
+            house_rules_title:"Regole della Casa",
+            no_smoking:"Non è consentito fumare all'interno.",
+            no_parties:"Non è possibile organizzare feste.",
+            turn_off_ac:"Spegni l'aria condizionata quando esci.",
+            welcome_guide:"Guida di Benvenuto",
+            checkin_instructions:"Istruzioni Check-in: Dettagli inviati via email il giorno prima.",
+            emergency_numbers:"Numeri Utili: Emergenza 112",
+            tips:"Consigli: Visita il Ristorante Osteria Sanmarzano.",
+            offer_title:"🎉 Offerta Speciale! 🎉",
+            offer_text:"Prenota ora direttamente dal nostro sito e ricevi uno sconto del 10% sul tuo soggiorno!",
+            offer_cta:"Approfitta dell'offerta",
+            booking_title:"Conferma prenotazione",
+            booking_name:"Il tuo nome",
+            booking_email:"La tua email",
+            booking_send:"Invia richiesta",
+            booking_paypal:"Paga con PayPal",
+            booking_total:"Totale:",
+            booking_total_discount:"Totale (con sconto del 10%):",
+            booking_discount_info:"Hai usufruito dello sconto del 10%!",
+            booking_original:"Prezzo originale:",
+            price_night:"/ notte",
+            guests_info:"Ospiti: fino a un massimo di 3 persone",
+            dates_title:"Seleziona le date:",
+            dates_placeholder:"Seleziona le date",
+            guests_label:"Ospiti (Max 3):",
+            faq_title:"Domande Frequenti",
+            faq_q1_title:"1. Tassa di soggiorno: cos'è e come si paga?",
+            faq_q1_body:"A Roma è obbligatoria la tassa di soggiorno. L'importo varia a seconda della tipologia di alloggio e deve essere pagato in contanti all'arrivo.",
+            faq_q2_title:"2. Cosa posso fare per muovermi in città?",
+            faq_q2_metro:"Metro: Linea B, fermata Laurentina.",
+            faq_q2_bus:"Autobus e Tram: Rete molto estesa.",
+            faq_q2_taxi:"Taxi: App FreeNow o Radiotaxi 06 3570.",
+            faq_q2_bike:"Bici e Monopattini: Lime e Helbiz.",
+            faq_q3_title:"3. Ci sono regole di comportamento o consigli utili?",
+            faq_q3_water:"Acqua potabile dalle fontanelle.",
+            faq_q3_monuments:"Rispettare i monumenti.",
+            faq_q3_dress:"Abbigliamento nei luoghi di culto.",
+            rev_1:"Bellissimo attico, pulito e con vista spettacolare! Tornerò sicuramente.",
+            rev_2:"Posizione comoda, host gentile e disponibile.",
+            rev_3:"Tutto perfetto! Il terrazzo è il punto forte della casa."
+        },
+        en: {
+            nav_descrizione:"Description", nav_servizi:"Amenities", nav_galleria:"Gallery",
+            nav_dintorni:"Neighborhood", nav_recensioni:"Reviews", nav_contatti:"Contact",
+            hero_title:"Cozy penthouse with panoramic terrace",
+            hero_subtitle:"Comfort and breathtaking views of Rome",
+            hero_button:"Book now",
+            sec_descrizione:"Accommodation description",
+            sec_servizi:"Penthouse amenities",
+            sec_galleria:"Photo gallery",
+            sec_dintorni:"Things to do nearby",
+            sec_recensioni:"Guest reviews",
+            recensione_lascia:"Leave your review",
+            contatto_modulo:"Contact form",
+            sec_contatti:"Contacts",
+            ph_nome:"Your name",
+            ph_email:"Your email",
+            ph_messaggio:"Your message",
+            rec_ph_nome:"Your name",
+            rec_ph_testo:"Write your review here...",
+            contatto_invia:"Send message",
+            rec_invia:"Send review",
+            srv_wifi:"Fast Wi-Fi",
+            srv_aria:"Air conditioning",
+            srv_cucina:"Equipped kitchen",
+            srv_lavatrice:"Washing machine",
+            srv_parcheggio:"Free parking",
+            srv_tv:"Flat-screen TV",
+            srv_ascensore:"Elevator",
+            srv_bollitore:"Kettle",
+            srv_caffe:"Coffee machine",
+            srv_patio:"Private patio or balcony",
+            d1_t:"The Colosseum",
+            d2_t:"Piazza Navona",
+            d3_t:"Trastevere district",
+            d4_t:"La Nuvola (EUR)",
+            d5_t:"EUR Lake",
+            d1_p:"Only 20 minutes by bus.",
+            d2_p:"30 minutes on foot or by bus.",
+            d3_p:"15 minutes by public transport.",
+            d4_p:"10 minutes by car or bus.",
+            d5_p:"10 minutes on foot.",
+            descr_par1:"Welcome to our cozy penthouse with a panoramic terrace in Rome, located on the 7th floor of a quiet building near the EUR district. Bright and welcoming, the accommodation is the ideal choice for anyone seeking an extraordinary stay in a residential, safe area away from the city bustle yet just minutes from the main points of interest.",
+            sec_dicono:"What guests say",
+            sec_regole:"House rules",
+            ext_reviews_title:"What guests say about us",
+            ext_reviews_subtitle:"Read verified reviews from our guests on other platforms.",
+            ext_reviews_airbnb:"Airbnb Reviews",
+            ext_reviews_booking:"Booking.com Reviews",
+            ext_reviews_google:"Google Reviews",
+            ext_reviews_read_more_airbnb:"Read more on Airbnb",
+            ext_reviews_read_more_booking:"Read more on Booking",
+            ext_reviews_read_more_google:"Read more on Google",
+            house_rules_title:"House Rules",
+            no_smoking:"Smoking indoors is not allowed.",
+            no_parties:"Parties are not allowed.",
+            turn_off_ac:"Turn off the air conditioning when you leave.",
+            welcome_guide:"Welcome Guide",
+            checkin_instructions:"Check-in Instructions: Details will be emailed the day before.",
+            emergency_numbers:"Useful Numbers: Emergency 112",
+            tips:"Tips: Visit the Osteria Sanmarzano restaurant.",
+            offer_title:"🎉 Special Offer! 🎉",
+            offer_text:"Book now on our website and get a 10% discount on your stay!",
+            offer_cta:"Get the offer",
+            booking_title:"Booking confirmation",
+            booking_name:"Your name",
+            booking_email:"Your email",
+            booking_send:"Send request",
+            booking_paypal:"Pay with PayPal",
+            booking_total:"Total:",
+            booking_total_discount:"Total (10% discount):",
+            booking_discount_info:"You received a 10% discount!",
+            booking_original:"Original price:",
+            price_night:"/ night",
+            guests_info:"Guests: up to 3 people",
+            dates_title:"Select dates:",
+            dates_placeholder:"Select dates",
+            guests_label:"Guests (Max 3):",
+            faq_title:"Frequently Asked Questions",
+            faq_q1_title:"1. City tax: what is it and how do I pay?",
+            faq_q1_body:"In Rome the city tax is mandatory. The amount depends on the type of accommodation and must be paid in cash upon arrival.",
+            faq_q2_title:"2. How can I get around the city?",
+            faq_q2_metro:"Metro: Line B, Laurentina station.",
+            faq_q2_bus:"Buses & trams: Extensive network.",
+            faq_q2_taxi:"Taxis: FreeNow app or Radiotaxi 06 3570.",
+            faq_q2_bike:"Bikes & e-scooters: Lime and Helbiz.",
+            faq_q3_title:"3. Are there behaviour rules or useful tips?",
+            faq_q3_water:"Drinking water from fountains.",
+            faq_q3_monuments:"Respect monuments.",
+            faq_q3_dress:"Dress code for places of worship.",
+            rev_1:"Beautiful penthouse, clean and with a spectacular view! I will definitely come back.",
+            rev_2:"Convenient location, kind and helpful host.",
+            rev_3:"Everything perfect! The terrace is the home's strong point."
+        },
+        es: {
+            nav_descrizione:"Descripción", nav_servizi:"Servicios", nav_galleria:"Galería",
+            nav_dintorni:"Alrededores", nav_recensioni:"Reseñas", nav_contatti:"Contactos",
+            hero_title:"Ático acogedor con terraza panorámica",
+            hero_subtitle:"Confort y vistas impresionantes de Roma",
+            hero_button:"Reserva ahora",
+            sec_descrizione:"Descripción del alojamiento",
+            sec_servizi:"Servicios del ático",
+            sec_galleria:"Galería fotográfica",
+            sec_dintorni:"Qué hacer cerca",
+            sec_recensioni:"Reseñas de huéspedes",
+            recensione_lascia:"Deja tu reseña",
+            contatto_modulo:"Formulario de contacto",
+            sec_contatti:"Contactos",
+            ph_nome:"Tu nombre",
+            ph_email:"Tu correo",
+            ph_messaggio:"Tu mensaje",
+            rec_ph_nome:"Tu nombre",
+            rec_ph_testo:"Escribe tu reseña aquí...",
+            contatto_invia:"Enviar mensaje",
+            rec_invia:"Enviar reseña",
+            srv_wifi:"Wi-Fi rápido",
+            srv_aria:"Aire acondicionado",
+            srv_cucina:"Cocina equipada",
+            srv_lavatrice:"Lavadora",
+            srv_parcheggio:"Aparcamiento gratuito",
+            srv_tv:"TV de pantalla plana",
+            srv_ascensore:"Ascensor",
+            srv_bollitore:"Hervidor",
+            srv_caffe:"Cafetera",
+            srv_patio:"Patio o balcón privado",
+            d1_t:"El Coliseo",
+            d2_t:"Piazza Navona",
+            d3_t:"Barrio de Trastevere",
+            d4_t:"La Nuvola (EUR)",
+            d5_t:"Lago del EUR",
+            d1_p:"A solo 20 minutos en autobús.",
+            d2_p:"A 30 minutos a pie o en autobús.",
+            d3_p:"A 15 minutos en transporte público.",
+            d4_p:"A 10 minutos en coche o autobús.",
+            d5_p:"A 10 minutos a pie.",
+            descr_par1:"El ático está amueblado con gusto y ofrece todas las comodidades para que tus vacaciones o viaje de trabajo sean inolvidables. Disfruta de tu café matutino o de un aperitivo al atardecer en nuestra amplia terraza, con impresionantes vistas a los tejados de Roma y a las zonas verdes del barrio EUR.",
+            sec_dicono:"Lo que dicen nuestros huéspedes",
+            sec_regole:"Normas de la casa",
+            ext_reviews_title:"Lo que dicen de nosotros",
+            ext_reviews_subtitle:"Lee reseñas verificadas de nuestros huéspedes en otras plataformas.",
+            ext_reviews_airbnb:"Reseñas de Airbnb",
+            ext_reviews_booking:"Reseñas de Booking.com",
+            ext_reviews_google:"Reseñas de Google",
+            ext_reviews_read_more_airbnb:"Leer más en Airbnb",
+            ext_reviews_read_more_booking:"Leer más en Booking",
+            ext_reviews_read_more_google:"Leer más en Google",
+            house_rules_title:"Reglas de la casa",
+            no_smoking:"No está permitido fumar en el interior.",
+            no_parties:"No se permiten fiestas.",
+            turn_off_ac:"Apaga el aire acondicionado cuando salgas.",
+            welcome_guide:"Guía de bienvenida",
+            checkin_instructions:"Instrucciones de check-in: Los detalles se enviarán por correo el día anterior.",
+            emergency_numbers:"Números útiles: Emergencias 112",
+            tips:"Consejos: Visita el restaurante Osteria Sanmarzano.",
+            offer_title:"🎉 ¡Oferta especial! 🎉",
+            offer_text:"¡Reserva ahora en nuestra web y recibe un 10% de descuento en tu estancia!",
+            offer_cta:"Aprovecha la oferta",
+            booking_title:"Confirmar reserva",
+            booking_name:"Tu nombre",
+            booking_email:"Tu correo",
+            booking_send:"Enviar solicitud",
+            booking_paypal:"Pagar con PayPal",
+            booking_total:"Total:",
+            booking_total_discount:"Total (descuento 10%):",
+            booking_discount_info:"¡Has usado un 10% de descuento!",
+            booking_original:"Precio original:",
+            price_night:"/ noche",
+            guests_info:"Huéspedes: hasta 3 personas",
+            dates_title:"Selecciona las fechas:",
+            dates_placeholder:"Selecciona las fechas",
+            guests_label:"Huéspedes (Máx. 3):",
+            faq_title:"Preguntas frecuentes",
+            faq_q1_title:"1. Tasa turística: ¿qué es y cómo se paga?",
+            faq_q1_body:"En Roma la tasa turística es obligatoria. El importe depende del tipo de alojamiento y debe pagarse en efectivo a la llegada.",
+            faq_q2_title:"2. ¿Cómo puedo moverme por la ciudad?",
+            faq_q2_metro:"Metro: Línea B, estación Laurentina.",
+            faq_q2_bus:"Autobuses y tranvías: Red muy extensa.",
+            faq_q2_taxi:"Taxis: App FreeNow o Radiotaxi 06 3570.",
+            faq_q2_bike:"Bicicletas y patinetes: Lime y Helbiz.",
+            faq_q3_title:"3. ¿Hay normas de conducta o consejos útiles?",
+            faq_q3_water:"Agua potable de las fuentes.",
+            faq_q3_monuments:"Respetar los monumentos.",
+            faq_q3_dress:"Vestimenta en lugares de culto.",
+            rev_1:"Precioso ático, limpio y con una vista espectacular. ¡Volveré sin duda!",
+            rev_2:"Ubicación conveniente, anfitrión amable y servicial.",
+            rev_3:"¡Todo perfecto! La terraza es el punto fuerte de la casa."
+        },
+        ru: {
+            nav_descrizione:"Описание", nav_servizi:"Удобства", nav_galleria:"Галерея",
+            nav_dintorni:"Окрестности", nav_recensioni:"Отзывы", nav_contatti:"Контакты",
+            hero_title:"Уютный пентхаус с панорамной террасой",
+            hero_subtitle:"Комфорт и захватывающий вид на Рим",
+            hero_button:"Забронировать",
+            sec_descrizione:"Описание жилья",
+            sec_servizi:"Удобства пентхауса",
+            sec_galleria:"Фотогалерея",
+            sec_dintorni:"Что посмотреть рядом",
+            sec_recensioni:"Отзывы гостей",
+            recensione_lascia:"Оставьте отзыв",
+            contatto_modulo:"Форма связи",
+            sec_contatti:"Контакты",
+            ph_nome:"Ваше имя",
+            ph_email:"Ваш e-mail",
+            ph_messaggio:"Ваше сообщение",
+            rec_ph_nome:"Ваше имя",
+            rec_ph_testo:"Напишите ваш отзыв здесь...",
+            contatto_invia:"Отправить сообщение",
+            rec_invia:"Отправить отзыв",
+            srv_wifi:"Быстрый Wi-Fi",
+            srv_aria:"Кондиционер",
+            srv_cucina:"Оборудованная кухня",
+            srv_lavatrice:"Стиральная машина",
+            srv_parcheggio:"Бесплатная парковка",
+            srv_tv:"Плоский телевизор",
+            srv_ascensore:"Лифт",
+            srv_bollitore:"Чайник",
+            srv_caffe:"Кофемашина",
+            srv_patio:"Частный патио или балкон",
+            d1_t:"Колизей",
+            d2_t:"Пьяцца Навона",
+            d3_t:"Район Трастевере",
+            d4_t:"Ла Нувола (EUR)",
+            d5_t:"Озеро EUR",
+            d1_p:"Всего 20 минут на автобусе.",
+            d2_p:"30 минут пешком или на автобусе.",
+            d3_p:"15 минут на общественном транспорте.",
+            d4_p:"10 минут на машине или автобусе.",
+            d5_p:"10 минут пешком.",
+            descr_par1:"Пентхаус со вкусом меблирован и предлагает все удобства для незабываемого отдыха или деловой поездки. Наслаждайтесь утренним кофе или вечерним аперитивом на нашей большой террасе с захватывающим видом на крыши Рима и зелёные зоны района EUR.",
+            sec_dicono:"Что говорят гости",
+            sec_regole:"Правила дома",
+            ext_reviews_title:"Что о нас говорят",
+            ext_reviews_subtitle:"Читайте подтверждённые отзывы наших гостей на других платформах.",
+            ext_reviews_airbnb:"Отзывы на Airbnb",
+            ext_reviews_booking:"Отзывы на Booking.com",
+            ext_reviews_google:"Отзывы в Google",
+            ext_reviews_read_more_airbnb:"Читать на Airbnb",
+            ext_reviews_read_more_booking:"Читать на Booking",
+            ext_reviews_read_more_google:"Читать в Google",
+            house_rules_title:"Правила дома",
+            no_smoking:"Курение внутри запрещено.",
+            no_parties:"Проведение вечеринок запрещено.",
+            turn_off_ac:"Выключайте кондиционер, уходя.",
+            welcome_guide:"Руководство для гостей",
+            checkin_instructions:"Инструкция по заезду: Подробности высылаются по электронной почте за день до прибытия.",
+            emergency_numbers:"Полезные номера: Единый номер экстренных служб 112",
+            tips:"Советы: Посетите ресторан Osteria Sanmarzano.",
+            offer_title:"🎉 Специальное предложение! 🎉",
+            offer_text:"Бронируйте на нашем сайте и получите скидку 10% на проживание!",
+            offer_cta:"Воспользоваться предложением",
+            booking_title:"Подтверждение бронирования",
+            booking_name:"Ваше имя",
+            booking_email:"Ваш email",
+            booking_send:"Отправить запрос",
+            booking_paypal:"Оплатить через PayPal",
+            booking_total:"Итого:",
+            booking_total_discount:"Итого (скидка 10%):",
+            booking_discount_info:"Вы получили скидку 10%!",
+            booking_original:"Исходная цена:",
+            price_night:"/ ночь",
+            guests_info:"Гости: максимум 3 человека",
+            dates_title:"Выберите даты:",
+            dates_placeholder:"Выберите даты",
+            guests_label:"Гости (макс. 3):",
+            faq_title:"Часто задаваемые вопросы",
+            faq_q1_title:"1. Туристический сбор: что это и как оплачивается?",
+            faq_q1_body:"В Риме туристический сбор обязателен. Сумма зависит от типа проживания и оплачивается наличными по прибытии.",
+            faq_q2_title:"2. Как перемещаться по городу?",
+            faq_q2_metro:"Метро: линия B, станция Laurentina.",
+            faq_q2_bus:"Автобусы и трамваи: очень разветвлённая сеть.",
+            faq_q2_taxi:"Такси: приложение FreeNow или Radiotaxi 06 3570.",
+            faq_q2_bike:"Велосипеды и самокаты: Lime и Helbiz.",
+            faq_q3_title:"3. Есть ли правила поведения или полезные советы?",
+            faq_q3_water:"Питьевая вода из фонтанов.",
+            faq_q3_monuments:"Уважайте памятники.",
+            faq_q3_dress:"Одежда в храмах.",
+            rev_1:"Прекрасный пентхаус, чисто и потрясающий вид! Обязательно вернусь.",
+            rev_2:"Удобное расположение, доброжелательный и отзывчивый хозяин.",
+            rev_3:"Всё идеально! Терраса — сильная сторона этого дома."
+        },
+        zh: {
+            nav_descrizione:"介绍", nav_servizi:"设施", nav_galleria:"相册",
+            nav_dintorni:"周边", nav_recensioni:"评价", nav_contatti:"联系",
+            hero_title:"舒适的露台全景顶层公寓",
+            hero_subtitle:"舒适与罗马的壮丽景色",
+            hero_button:"立即预订",
+            sec_descrizione:"住宿描述",
+            sec_servizi:"顶层公寓设施",
+            sec_galleria:"照片画廊",
+            sec_dintorni:"附近可做的事",
+            sec_recensioni:"住客评价",
+            recensione_lascia:"留下您的评价",
+            contatto_modulo:"联系表单",
+            sec_contatti:"联系",
+            ph_nome:"您的姓名",
+            ph_email:"您的邮箱",
+            ph_messaggio:"您的留言",
+            rec_ph_nome:"您的姓名",
+            rec_ph_testo:"在此撰写您的评价",
+            contatto_invia:"发送消息",
+            rec_invia:"发送评价",
+            srv_wifi:"高速 Wi-Fi",
+            srv_aria:"空调",
+            srv_cucina:"设备齐全的厨房",
+            srv_lavatrice:"洗衣机",
+            srv_parcheggio:"免费停车",
+            srv_tv:"平板电视",
+            srv_ascensore:"电梯",
+            srv_bollitore:"电热水壶",
+            srv_caffe:"咖啡机",
+            srv_patio:"私人庭院或阳台",
+            d1_t:"斗兽场",
+            d2_t:"纳沃纳广场",
+            d3_t:"特拉斯提弗列区",
+            d4_t:"云形会展中心 (EUR)",
+            d5_t:"EUR 湖",
+            d1_p:"乘公交仅 20 分钟。",
+            d2_p:"步行或公交 30 分钟。",
+            d3_p:"公共交通 15 分钟。",
+            d4_p:"驾车或公交 10 分钟。",
+            d5_p:"步行 10 分钟。",
+            descr_par1:"这间顶层公寓布置雅致，提供一切舒适设施，让您的度假或商务之行难忘。您可以在我们的大露台上享用晨间咖啡或傍晚开胃酒，俯瞰罗马屋顶与 EUR 区的绿地。",
+            sec_dicono:"住客怎么说",
+            sec_regole:"房屋守则",
+            ext_reviews_title:"客人怎么评价我们",
+            ext_reviews_subtitle:"查看客人在其他平台上的已验证评价。",
+            ext_reviews_airbnb:"Airbnb 评价",
+            ext_reviews_booking:"Booking.com 评价",
+            ext_reviews_google:"Google 评价",
+            ext_reviews_read_more_airbnb:"在 Airbnb 上查看更多",
+            ext_reviews_read_more_booking:"在 Booking 上查看更多",
+            ext_reviews_read_more_google:"在 Google 上查看更多",
+            house_rules_title:"房屋守则",
+            no_smoking:"室内禁止吸烟。",
+            no_parties:"不允许举办派对。",
+            turn_off_ac:"离开时请关闭空调。",
+            welcome_guide:"欢迎指南",
+            checkin_instructions:"入住说明： 详情会在前一天通过电子邮件发送。",
+            emergency_numbers:"常用电话： 紧急电话 112",
+            tips:"建议： 去 Osteria Sanmarzano 餐厅。",
+            offer_title:"🎉 特别优惠！🎉",
+            offer_text:"现在在我们的网站预订，享受9折住宿优惠！",
+            offer_cta:"领取优惠",
+            booking_title:"确认预订",
+            booking_name:"您的姓名",
+            booking_email:"您的邮箱",
+            booking_send:"发送请求",
+            booking_paypal:"使用PayPal付款",
+            booking_total:"总计：",
+            booking_total_discount:"总计（9折）：",
+            booking_discount_info:"已享受 10% 优惠！",
+            booking_original:"原价：",
+            price_night:"/ 晚",
+            guests_info:"住客：最多 3 人",
+            dates_title:"选择日期：",
+            dates_placeholder:"选择日期",
+            guests_label:"住客（最多 3 人）：",
+            faq_title:"常见问题",
+            faq_q1_title:"1. 城市税：是什么，如何支付？",
+            faq_q1_body:"在罗马需要缴纳城市税。金额取决于住宿类型，需在到达时以现金支付。",
+            faq_q2_title:"2. 在城市里如何出行？",
+            faq_q2_metro:"地铁：B 线，Laurentina 站。",
+            faq_q2_bus:"公交与电车：网络非常发达。",
+            faq_q2_taxi:"出租车：FreeNow 应用或 Radiotaxi 06 3570。",
+            faq_q2_bike:"自行车与电动滑板车：Lime 和 Helbiz。",
+            faq_q3_title:"3. 是否有行为规范或实用建议？",
+            faq_q3_water:"饮用水来自喷泉。",
+            faq_q3_monuments:"尊重古迹。",
+            faq_q3_dress:"宗教场所着装要求。",
+            rev_1:"漂亮的顶层公寓，干净整洁，景色壮观！一定会再来。",
+            rev_2:"位置方便，房东热情友好且乐于助人。",
+            rev_3:"一切都很完美！露台是这所房子的亮点。"
+        }
+    };
+    var offerApplied = false;
+    var currentLang = 'it';
+    function getLang() {
+        var lang = localStorage.getItem('site_lang');
+        if (lang && translations[lang]) return lang;
+        lang = document.documentElement.lang || 'it';
+        if (translations[lang]) return lang;
+        return 'it';
+    }
+    function getTranslations(lang) {
+        return translations[lang] || translations.it || {};
+    }
+    function applyTranslations(lang) {
+        var t = getTranslations(lang);
+        currentLang = lang;
+        document.querySelectorAll('[data-translate]').forEach(function(el) {
+            var key = el.getAttribute('data-translate');
+            if (t[key] !== undefined) {
+                el.textContent = t[key];
+            }
+        });
+        document.querySelectorAll('[data-ph-key]').forEach(function(el) {
+            var key = el.getAttribute('data-ph-key');
+            if (t[key] !== undefined) {
+                el.placeholder = t[key];
+            }
+        });
+        document.documentElement.lang = lang;
+        localStorage.setItem('site_lang', lang);
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+    function initLanguage() {
+        var lang = getLang();
+        applyTranslations(lang);
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                applyTranslations(this.dataset.lang);
+            });
+        });
+    }
+    function initHeroSlider() {
+        var hero = document.getElementById('hero');
+        if (!hero) return;
+        var images = [];
+        document.querySelectorAll('.galleria img').forEach(function(img) {
+            if (img.src) images.push(img.src);
+        });
+        if (images.length === 0) return;
+        var current = 0;
+        function changeHero() {
+            hero.style.backgroundImage = "url('" + images[current] + "')";
+            current = (current + 1) % images.length;
+        }
+        changeHero();
+        setInterval(changeHero, 4000);
+    }
+    function initLightbox() {
+        var lightbox = document.getElementById('myLightbox');
+        var lightboxImage = document.getElementById('lightboxImage');
+        var closeBtn = document.querySelector('.lightbox-close');
+        var galleryImages = document.querySelectorAll('.galleria img');
+        var prevBtn = document.querySelector('.lightbox-prev');
+        var nextBtn = document.querySelector('.lightbox-next');
+        var currentIndex = -1;
+        var images = Array.from(galleryImages);
+        function showImage(index) {
+            if (index < 0) index = images.length - 1;
+            if (index >= images.length) index = 0;
+            currentIndex = index;
+            lightboxImage.src = images[currentIndex].src;
+            lightbox.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function hideLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        images.forEach(function(img, i) {
+            img.addEventListener('click', function() { showImage(i); });
+        });
+        if (closeBtn) closeBtn.addEventListener('click', hideLightbox);
+        if (prevBtn) prevBtn.addEventListener('click', function() { showImage(currentIndex - 1); });
+        if (nextBtn) nextBtn.addEventListener('click', function() { showImage(currentIndex + 1); });
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) hideLightbox();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (lightbox.style.display === 'block') {
+                if (e.key === 'Escape') hideLightbox();
+                if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+                if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+            }
+        });
+    }
+    function initBooking() {
+        var calendarInput = document.getElementById('calendar-input');
+        if (calendarInput && typeof flatpickr !== 'undefined') {
+            flatpickr(calendarInput, {
+                mode: 'range',
+                minDate: 'today',
+                dateFormat: 'Y-m-d',
+                disable: []
+            });
+        }
+        var btnPrenota = document.getElementById('btnPrenota');
+        var btnChiudi = document.getElementById('btnChiudiPopup');
+        var btnInvia = document.getElementById('btnInviaPrenotazione');
+        var btnCloseOffer = document.getElementById('btnCloseOffer');
+        var btnApplyOffer = document.getElementById('btnApplyOffer');
+        if (btnPrenota) {
+            btnPrenota.addEventListener('click', openBookingPopup);
+        }
+        if (btnChiudi) {
+            btnChiudi.addEventListener('click', closeBookingPopup);
+        }
+        if (btnInvia) {
+            btnInvia.addEventListener('click', function() {
+                alert('Richiesta di prenotazione inviata! Ti contatteremo al più presto.');
+                closeBookingPopup();
+            });
+        }
+        if (btnCloseOffer) {
+            btnCloseOffer.addEventListener('click', function() {
+                var popup = document.getElementById('offer-popup');
+                if (popup) popup.style.display = 'none';
+            });
+        }
+        if (btnApplyOffer) {
+            btnApplyOffer.addEventListener('click', function() {
+                offerApplied = true;
+                var popup = document.getElementById('offer-popup');
+                if (popup) popup.style.display = 'none';
+            });
+        }
+        setTimeout(function() {
+            var popup = document.getElementById('offer-popup');
+            if (popup) popup.style.display = 'flex';
+        }, 10000);
+    }
+    function openBookingPopup() {
+        var calendarInput = document.getElementById('calendar-input');
+        var dateInfo = document.getElementById('date-info');
+        var totaleInfo = document.getElementById('totale-prezzo-info');
+        var scontoInfo = document.getElementById('sconto-info');
+        var ospitiInput = document.getElementById('ospiti');
+        if (!calendarInput || !dateInfo) return;
+        var dates = calendarInput.value;
+        var ospiti = parseInt(ospitiInput ? ospitiInput.value : '1', 10) || 1;
+        if (!dates) {
+            alert('Seleziona le date prima di prenotare!');
+            return;
+        }
+        if (ospiti > 3) {
+            alert('Il numero massimo di persone è 3.');
+            return;
+        }
+        var parts = dates.split(' to ');
+        if (parts.length < 2) {
+            alert('Seleziona un intervallo di date!');
+            return;
+        }
+        var checkin = parts[0];
+        var checkout = parts[1];
+        var prezzoNotte = 120;
+        var inDate = new Date(checkin);
+        var outDate = new Date(checkout);
+        var notti = Math.max(1, Math.round((outDate - inDate) / (1000 * 60 * 60 * 24)));
+        var totaleOriginale = prezzoNotte * notti;
+        var totaleFinale = totaleOriginale;
+        var t = getTranslations(currentLang);
+        if (offerApplied) {
+            totaleFinale = totaleOriginale * 0.90;
+            if (scontoInfo) {
+                scontoInfo.textContent = t.booking_discount_info || 'Hai usufruito dello sconto del 10%!';
+            }
+        } else {
+            if (scontoInfo) {
+                scontoInfo.textContent = '';
+            }
+        }
+        dateInfo.textContent = 'Dal ' + checkin + ' al ' + checkout + ' (' + notti + ' notti, ' + ospiti + ' persone)';
+        if (offerApplied) {
+            totaleInfo.innerHTML = '<p><strong>' + (t.booking_total_discount || 'Totale (con sconto del 10%):') + '</strong> <span class="popup-prezzo-sconto">€' + totaleFinale.toFixed(2) + '</span></p><p class="popup-prezzo-originale">' + (t.booking_original || 'Prezzo originale:') + ' €' + totaleOriginale.toFixed(2) + '</p>';
+        } else {
+            totaleInfo.innerHTML = '<p><strong>' + (t.booking_total || 'Totale:') + '</strong> <span class="popup-prezzo-sconto">€' + totaleFinale.toFixed(2) + '</span></p>';
+        }
+        var popup = document.getElementById('popup');
+        if (popup) popup.style.display = 'block';
+    }
+    function closeBookingPopup() {
+        var popup = document.getElementById('popup');
+        if (popup) popup.style.display = 'none';
+    }
+    function initReviews() {
+        var form = document.getElementById('recensione-form');
+        if (!form) return;
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var nome = document.getElementById('nome-recensione');
+            var testo = document.getElementById('testo-recensione');
+            var rating = document.querySelector('input[name="rating"]:checked');
+            if (nome && testo && rating && nome.value && testo.value) {
+                alert('Recensione inviata!\nNome: ' + nome.value + '\nTesto: ' + testo.value + '\nVoto: ' + rating.value + ' stelle');
+                this.reset();
+            } else {
+                alert('Per favore, compila tutti i campi e seleziona un voto.');
+            }
+        });
+    }
+    function initContactForm() {
+        var form = document.getElementById('form-contatti');
+        if (!form) return;
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var nome = this.querySelector('[name="nome"]');
+            var email = this.querySelector('[name="email"]');
+            var messaggio = this.querySelector('[name="messaggio"]');
+            if (nome && email && messaggio && nome.value && email.value && messaggio.value) {
+                alert('Messaggio inviato! Grazie, ' + nome.value + '.');
+                this.reset();
+            } else {
+                alert('Compila tutti i campi del modulo.');
+            }
+        });
+    }
+    function initBackToTop() {
+        var btn = document.getElementById('back-to-top');
+        if (!btn) return;
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        window.addEventListener('scroll', function() {
+            btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        btn.style.display = 'none';
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        initLanguage();
+        initHeroSlider();
+        initLightbox();
+        initBooking();
+        initReviews();
+        initContactForm();
+        initBackToTop();
+    });
+})();
+</script>
+    <script src="/static/js/chatbot.js"></script>
+</body></html>

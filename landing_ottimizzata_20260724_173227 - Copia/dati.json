@@ -1,0 +1,50 @@
+{
+  "titolo": "Accogliente attico con terrazzo panoramico",
+  "sottotitolo": "Comfort e vista mozzafiato su Roma",
+  "prezzo": 120,
+  "descrizione": "Attico al 7º piano con terrazzo panoramico, zona tranquilla e ben collegata. Ideale per vacanze o soggiorni di lavoro a Roma.",
+  "indirizzo": "Via Guido Ascoli, Fonte Laurentina, Roma",
+  "hero_image": "image1.jpg",
+  "immagini": [
+    "image1.jpg",
+    "image2.jpg",
+    "image3.jpg",
+    "image4.jpg",
+    "image5.jpg",
+    "image6.jpg",
+    "image7.jpg",
+    "image8.jpg",
+    "image9.jpg"
+  ],
+  "dettagli": {
+    "ospiti": 4,
+    "camere": 2,
+    "letti": 3,
+    "bagni": 1
+  },
+  "servizi": [
+    "Wi-Fi veloce",
+    "Aria condizionata",
+    "Cucina attrezzata",
+    "Lavatrice",
+    "Parcheggio gratuito",
+    "TV a schermo piatto"
+  ],
+  "recensioni": [
+    {
+      "nome": "Marco",
+      "testo": "Bellissimo attico, pulito e con vista spettacolare! Tornerò sicuramente.",
+      "voto": 5
+    },
+    {
+      "nome": "Giulia",
+      "testo": "Posizione comoda, host gentile e disponibile.",
+      "voto": 4
+    },
+    {
+      "nome": "Luca",
+      "testo": "Tutto perfetto! Il terrazzo è il punto forte della casa.",
+      "voto": 5
+    }
+  ]
+}

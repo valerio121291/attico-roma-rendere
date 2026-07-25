@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, jsonify
 import json, os, smtplib, ssl
 from datetime import datetime
@@ -6,9 +5,20 @@ from email.mime.text import MIMEText
 
 app = Flask(__name__)
 
-# === CONFIG EMAIL (dalle tue info) ===
+# === HEADER DI SICUREZZA ===
+@app.after_request
+def add_security_headers(response):
+    response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://maps.googleapis.com https://www.google.com https://generativelanguage.googleapis.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; img-src 'self' data: https://maps.gstatic.com; frame-src https://www.google.com; connect-src 'self' https://generativelanguage.googleapis.com;"
+    response.headers['Strict-Transport-Security'] = 'max-age=63072000; includeSubDomains; preload'
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    response.headers['X-Frame-Options'] = 'SAMEORIGIN'
+    response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
+    response.headers['Permissions-Policy'] = 'geolocation=(), microphone=(), camera=()'
+    return response
+
+# === CONFIG EMAIL ===
 MITTENTE = "pvalerio910@gmail.com"
-PASSWORD_APP = "wrzhcjrowqtlkfqm"   # tua app password senza spazi
+PASSWORD_APP = "wrzhcjrowqtlkfqm"
 DESTINATARI = ["pvalerio910@gmail.com", "katia.popova13@gmail.com"]
 
 SMTP_HOST = os.environ.get("SMTP_HOST", "smtp.gmail.com")
@@ -45,7 +55,6 @@ def send_mail(subject, body, reply_to=None):
 
     ctx = ssl.create_default_context()
 
-    # 1) SSL 465
     try:
         server = smtplib.SMTP_SSL(SMTP_HOST, SMTP_SSL_PORT, context=ctx, timeout=20)
         server.set_debuglevel(1)
@@ -59,7 +68,6 @@ def send_mail(subject, body, reply_to=None):
     except Exception as e:
         log(f"SSL error: {e}")
 
-    # 2) STARTTLS 587
     try:
         server = smtplib.SMTP(SMTP_HOST, SMTP_STARTTLS_PORT, timeout=20)
         server.set_debuglevel(1)
@@ -88,7 +96,70 @@ except Exception:
 def index():
     return render_template("index.html", dati=dati)
 
-# --- API ---
+@app.route("/en/")
+def index_en():
+    return render_template("en/index.html", dati=dati)
+
+@app.route("/es/")
+def index_es():
+    return render_template("es/index.html", dati=dati)
+
+@app.route("/ru/")
+def index_ru():
+    return render_template("ru/index.html", dati=dati)
+
+@app.route("/zh/")
+def index_zh():
+    return render_template("zh/index.html", dati=dati)
+
+# === API CHATBOT GEMINI ===
+@app.route('/ask-gemini', methods=['POST'])
+def ask_gemini():
+    try:
+        data = request.get_json(force=True, silent=True) or {}
+        question = data.get('question', '').strip()
+        
+        if not question:
+            return jsonify({'success': False, 'error': 'Domanda vuota'}), 400
+        
+        API_KEY = 'AIzaSyB_vcVb52oV4HsqX1hSP_B2ixTrklyAnac'
+        MODEL = 'gemini-2.5-flash'
+        
+        system_prompt = """Sei un assistente per un attico vacanze a Roma. Rispondi in italiano, amichevole e conciso. Massimo 4 frasi.
+        Info: Prezzo €120/notte, sconto 10% se prenotano dal sito. Max 3 ospiti. 2 camere, 1 bagno, cucina attrezzata.
+        Servizi: Wi-Fi, aria condizionata, lavatrice, parcheggio gratuito, TV, ascensore. Check-in flessibile. Check-out 10:00.
+        Posizione: Via Guido Ascoli, EUR, Roma. Metro Laurentina (Linea B) a 10 min. Autobus 714,780,716 a 5 min.
+        Attrazioni: Colosseo (20 min bus), Piazza Navona (30 min), Trastevere (15 min), Vaticano (30 min).
+        Ristorante: Osteria Sanmarzano a 5 min. Emergenza: 112."""
+        
+        url = f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={API_KEY}'
+        
+        headers = {'Content-Type': 'application/json'}
+        body = {
+            'contents': [{
+                'parts': [{
+                    'text': f'{system_prompt}\n\nDOMANDA UTENTE: {question}\n\nRISPONDI IN MODO CHIARO E CONCISO:'
+                }]
+            }]
+        }
+        
+        import requests
+        response = requests.post(url, headers=headers, json=body, timeout=15)
+        
+        if response.status_code == 200:
+            result = response.json()
+            if 'candidates' in result and len(result['candidates']) > 0:
+                answer = result['candidates'][0]['content']['parts'][0]['text']
+                answer = answer.replace('**', '').replace('#', '').replace('\n', ' ').strip()
+                return jsonify({'success': True, 'answer': answer})
+        
+        return jsonify({'success': False, 'error': 'Gemini non ha risposto'})
+        
+    except Exception as e:
+        log(f"/ask-gemini error: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+# === API CONTATTI ===
 @app.route("/api/test_email", methods=["POST"])
 def api_test_email():
     try:
@@ -162,68 +233,6 @@ Inviato: {datetime.now().isoformat()}
     except Exception as e:
         log(f"/prenota error: {e}")
         return jsonify({"success": False, "error": str(e)}), 500
-# ============================================
-# GEMINI CHATBOT
-# ============================================
-@app.route('/ask-gemini', methods=['POST'])
-def ask_gemini():
-    """Proxy per chiamare Google Gemini"""
-    try:
-        data = request.get_json(force=True, silent=True) or {}
-        question = data.get('question', '').strip()
-        
-        if not question:
-            return jsonify({'success': False, 'error': 'Domanda vuota'}), 400
-        
-        # La tua API Key di Gemini
-        API_KEY = 'AIzaSyB_vcVb52oV4HsqX1hSP_B2ixTrklyAnac'
-        MODEL = 'gemini-2.5-flash'
-        
-        # Prepara la richiesta per Gemini
-        system_prompt = """Sei un assistente per un attico vacanze a Roma chiamato "Attico con terrazzo panoramico". 
-        Rispondi in italiano, amichevole e conciso. Massimo 4 frasi.
-        Informazioni sull'attico:
-        - Prezzo: €120 a notte, sconto 10% se prenotano dal sito
-        - Ospiti: massimo 3 persone
-        - Camere: 2 camere da letto, 1 bagno, soggiorno con cucina attrezzata
-        - Servizi: Wi-Fi, aria condizionata, lavatrice, parcheggio gratuito, TV, ascensore
-        - Check-in: flessibile, istruzioni via email
-        - Check-out: entro le 10:00 (flessibile su richiesta)
-        - Posizione: Via Guido Ascoli, quartiere EUR, Roma
-        - Metro: Laurentina (Linea B) a 10 minuti a piedi
-        - Autobus: fermata a 5 minuti (linee 714, 780, 716)
-        - Attrazioni vicine: Colosseo (20 min bus), Piazza Navona (30 min), Trastevere (15 min), Vaticano (30 min)
-        - Ristorante consigliato: Osteria Sanmarzano a 5 minuti a piedi
-        - Emergenza: 112
-        
-        Non inventare informazioni. Usa solo quelle che ti ho dato."""
-        
-        url = f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={API_KEY}'
-        
-        headers = {'Content-Type': 'application/json'}
-        body = {
-            'contents': [{
-                'parts': [{
-                    'text': f'{system_prompt}\n\nDOMANDA UTENTE: {question}\n\nRISPONDI IN MODO CHIARO E CONCISO:'
-                }]
-            }]
-        }
-        
-        import requests
-        response = requests.post(url, headers=headers, json=body, timeout=15)
-        
-        if response.status_code == 200:
-            result = response.json()
-            if 'candidates' in result and len(result['candidates']) > 0:
-                answer = result['candidates'][0]['content']['parts'][0]['text']
-                # Pulisci la risposta
-                answer = answer.replace('**', '').replace('#', '').replace('\n', ' ').strip()
-                return jsonify({'success': True, 'answer': answer})
-        
-        return jsonify({'success': False, 'error': 'Gemini non ha risposto'})
-        
-    except Exception as e:
-        log(f"/ask-gemini error: {e}")
-        return jsonify({'success': False, 'error': str(e)}), 500
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)

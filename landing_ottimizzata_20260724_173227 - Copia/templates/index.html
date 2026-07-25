@@ -24,775 +24,44 @@
     <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_green.css" rel="stylesheet">
     
 <style>
-h2 span[data-translate="sec_descrizione"] { color: white; }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-image: url('{{ url_for('static', filename='images/roma.jpg') }}');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            margin: 0 10px;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        nav a:hover {
-            background-color: #ff5a5f;
-        }
-        #hero {
-            height: 600px;
-            background: center/cover no-repeat;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: background-image 1s ease-in-out;
-            background-attachment: fixed;
-        }
-        .hero-content {
-            text-align: center;
-            background: rgba(0,0,0,0.5);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .hero-content h1 {
-            color: white;
-        }
-        .cta-btn {
-            background: #dc3545;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .cta-btn:hover { background: #a71d2a; }
-        section {
-            padding: 40px 20px;
-            max-width: 1100px;
-            margin: auto;
-            background-color: rgba(255, 255, 255, 0.85);
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        h1, h2, h3 {
-            color: #333;
-            text-align: center;
-        }
-        h2 { margin-bottom: 20px; color: #333; }
-        .servizi {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-        }
-        .servizio {
-            background: #f7f7f7;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 14px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .servizio:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-        .servizio i {
-            font-size: 2.5em;
-            color: #ff5a5f;
-            margin-bottom: 15px;
-        }
-        .servizio span {
-            font-weight: bold;
-            color: #333;
-        }
-        .servizio.wifi i { color: #007bff; }
-        .servizio.aria-condizionata i { color: #20c997; }
-        .servizio.cucina i { color: #ffc107; }
-        .servizio.lavatrice i { color: #6c757d; }
-        .servizio.parcheggio i { color: #dc3545; }
-        .servizio.tv i { color: #6f42c1; }
-        .servizio.ascensore i { color: #5c677d; }
-        .servizio.bollitore i { color: #d35400; }
-        .servizio.macchina-caffe i { color: #8b4513; }
-        .servizio.patio i { color: #28a745; }
-        .mappa iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-            border-radius: 10px;
-        }
-        .galleria {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 10px;
-        }
-        .galleria img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .galleria img:hover {
-            transform: scale(1.05);
-        }
-        .dintorni-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            justify-content: center;
-            text-align: center;
-        }
-        .dintorni-item {
-            background: #f7f7f7;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            color: white;
-            min-height: 250px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .dintorni-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-        .dintorni-item h3, .dintorni-item p {
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            z-index: 10;
-        }
-        .dintorni-item-content {
-            z-index: 2;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        .dintorni-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            transition: background 0.3s ease;
-            z-index: 1;
-        }
-        .dintorni-item:hover::before {
-            background: rgba(0, 0, 0, 0.6);
-        }
-        .dintorni-colosseo {
-            background: url('{{ url_for('static', filename='images/colosseo.jpg') }}') no-repeat center center / cover;
-        }
-        .dintorni-piazza-navona {
-            background: url('{{ url_for('static', filename='images/piazza-navona.jpg') }}') no-repeat center center / cover;
-        }
-        .dintorni-trastevere {
-            background: url('{{ url_for('static', filename='images/trastevere.jpg') }}') no-repeat center center / cover;
-        }
-        .dintorni-eur-nuvola {
-            background: url('{{ url_for('static', filename='images/eur-nuvola.jpg') }}') no-repeat center center / cover;
-        }
-        .dintorni-laghetto {
-            background: url('{{ url_for('static', filename='images/laghetto.jpg') }}') no-repeat center center / cover;
-        }
-        .recensioni {
-            background: #fafafa;
-            border-left: 4px solid #dc3545;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-        .faq-item {
-            background: #f7f7f7;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .faq-item h3 {
-            text-align: left;
-            margin-top: 0;
-            color: #333;
-        }
-        .faq-item p {
-            color: #555;
-            margin-bottom: 0;
-        }
-        #booking-box {
-            padding: 40px 20px;
-            max-width: 1100px;
-            margin: auto;
-            background-color: rgba(255, 255, 255, 0.85);
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        .prenota-contenuto {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .prenota-contenuto h3 { margin: 0; color: #333; }
-        .prenota-contenuto h3 span { font-size: 14px; color: #777; }
-        .prenota-contenuto p { margin: 5px 0 10px; font-size: 14px; color: #555; }
-        .prenota-contenuto label { font-size: 13px; display: block; margin-top: 8px; }
-        .prenota-contenuto input { width: 100%; padding: 6px; margin-top: 3px; border: 1px solid #ccc; border-radius: 5px; }
-        .prenota-contenuto button { width: 100%; background: #dc3545; color: white; padding: 10px; border: none; border-radius: 8px; margin-top: 12px; font-size: 16px; cursor: pointer; }
-        .prenota-contenuto button:hover { background: #a71d2a; }
-        .popup {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            padding-top: 120px;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.5);
-        }
-        .popup-content {
-            background-color: white;
-            margin: auto;
-            padding: 20px;
-            border-radius: 12px;
-            width: 320px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            text-align: center;
-        }
-        .popup-content input {
-            width: 90%;
-            padding: 8px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-        .popup-content button {
-            background: #dc3545;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        .popup-content button:hover {
-            background: #a71d2a;
-        }
-        .popup-prezzo-sconto {
-            color: #dc3545;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        .popup-prezzo-originale {
-            text-decoration: line-through;
-            color: #888;
-            font-size: 0.9em;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .close:hover {
-            color: black;
-        }
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1001;
-            padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.9);
-        }
-        .lightbox-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-        .lightbox-content img {
-            width: 100%;
-            height: auto;
-        }
-        .lightbox-close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .lightbox-close:hover,
-        .lightbox-close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        #form-contatti {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        #form-contatti input, #form-contatti textarea, #form-contatti button {
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 14px;
-            background-color: white;
-        }
-        #form-contatti button {
-            background: #dc3545;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        #form-contatti button:hover {
-            background: #a71d2a;
-        }
-        #recensione-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        #recensione-form input,
-        #recensione-form textarea,
-        #recensione-form button {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        #recensione-form button {
-            background: #dc3545;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        #recensione-form button:hover {
-            background: #a71d2a;
-        }
-        .rating {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: flex-end;
-            margin-bottom: 10px;
-        }
-        .rating input {
-            display: none;
-        }
-        .rating label::before {
-            content: '★';
-        }
-        .rating label {
-            font-size: 2.5em;
-            color: #ccc;
-            cursor: pointer;
-            transition: color 0.3s;
-            margin-right: 5px;
-        }
-        .rating label:hover,
-        .rating label:hover ~ label,
-        .rating input:checked ~ label {
-            color: #ffc107;
-        }
-        .whatsapp-chat-button {
-            display: inline-block;
-            margin-top: 20px;
-        }
-        .whatsapp-chat-button a {
-            display: block;
-            width: 60px;
-            height: 60px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 60px;
-            font-size: 28px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
-        .whatsapp-chat-button a:hover {
-            transform: scale(1.1);
-        }
-        .recensioni-widget-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .widget-placeholder {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            flex: 1 1 250px;
-        }
-        .widget-placeholder a {
-            color: #dc3545;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .widget-placeholder a:hover {
-            text-decoration: underline;
-        }
-        .regole-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .regole-item {
-            background: #f7f7f7;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            flex: 1 1 400px;
-        }
-        .regole-item ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .regole-item li {
-            padding: 8px 0;
-            border-bottom: 1px solid #ddd;
-        }
-/* Pulsante robot - con animazione "salta" */
-.chatbot-toggle {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
-    transition: all 0.3s ease;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.chatbot-toggle:hover {
-    transform: scale(1.1);
-}
-.robot-icon {
-    font-size: 32px;
-    animation: robotJump 1.5s ease-in-out infinite;
-}
-@keyframes robotJump {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    30% { transform: translateY(-12px) rotate(-5deg); }
-    50% { transform: translateY(-8px) rotate(5deg); }
-    70% { transform: translateY(-12px) rotate(-5deg); }
-}
-        .popup-offer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1001;
-        }
-        .popup-offer-content {
-            background: #fff;
-            padding: 30px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            position: relative;
-            max-width: 400px;
-            animation: fadeIn 0.5s;
-        }
-        .popup-offer-content h2 {
-            color: #dc3545;
-            margin-top: 0;
-            font-size: 1.8em;
-        }
-        .popup-offer-content p {
-            color: #555;
-            font-size: 1.1em;
-        }
-        .close-offer {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 2em;
-            font-weight: bold;
-            color: #888;
-            cursor: pointer;
-        }
-        .close-offer:hover {
-            color: #333;
-        }
-        .cta-btn-offer {
-            background: #dc3545;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .cta-btn-offer:hover {
-            background: #a71d2a;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 768px) {
-            #booking-box {
-                position: static;
-                width: 100%;
-                margin-top: 20px;
-                border-radius: 0;
-                box-shadow: none;
-            }
-            section {
-                padding: 20px 10px;
-            }
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav a {
-                margin: 5px 0;
-            }
-            .regole-container {
-                flex-direction: column;
-            }
-            .widget-placeholder {
-                margin: 10px 0;
-            }
-            .popup-offer-content {
-                max-width: 90%;
-            }
-        }
-        .lightbox-prev, .lightbox-next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 48px;
-            background: rgba(0,0,0,0.4);
-            border: none;
-            color: #fff;
-            padding: 10px 16px;
-            cursor: pointer;
-            border-radius: 8px;
-            z-index: 1002;
-        }
-        .lightbox-prev { left: 10px; }
-        .lightbox-next { right: 10px; }
-        .lightbox-prev:hover, .lightbox-next:hover { background: rgba(0,0,0,0.6); }
-/* --- Ensure lightbox close button is visible on the left --- */
-.lightbox-close{
-  position: fixed !important;
-  top: 16px !important;
-  left: 16px !important;
-  right: auto !important;
-  font-size: 32px !important;
-  font-weight: 700;
-  color: #fff !important;
-  background: rgba(0,0,0,0.45);
-  width: 40px; height: 40px;
-  border-radius: 8px;
-  line-height: 40px;
-  text-align: center;
-  cursor: pointer;
-  z-index: 10002;
-  user-select: none;
-}
-.lightbox-close{ box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
-
-/* === MIGLIORIE CONTRASTO PULSANTI === */
-/* Pulsante "Prenota ora" nell'hero */
-.cta-btn {
-    background: #dc3545 !important;
-    color: #ffffff !important;
-}
-.cta-btn:hover {
-    background: #a71d2a !important;
-}
-
-/* Pulsanti del selettore lingua */
-.lang-btn {
-    color: #ffffff !important;
-}
-.lang-btn.active {
-    background: #dc3545 !important;
-    color: #ffffff !important;
-}
-
-/* Pulsante prenota nel booking box */
-.prenota-contenuto button {
-    background: #dc3545 !important;
-    color: #ffffff !important;
-}
-.prenota-contenuto button:hover {
-    background: #a71d2a !important;
-}
-
-/* Pulsanti dei form */
-#form-contatti button,
-#recensione-form button {
-    background: #dc3545 !important;
-    color: #ffffff !important;
-}
-#form-contatti button:hover,
-#recensione-form button:hover {
-    background: #a71d2a !important;
-}
-
-/* Link nei widget recensioni */
-.widget-placeholder a {
-    color: #dc3545 !important;
-}
-
-/* Pulsante offerta */
-.cta-btn-offer {
-    background: #dc3545 !important;
-    color: #ffffff !important;
-}
-.cta-btn-offer:hover {
-    background: #a71d2a !important;
-}
-
-/* Popup button */
-.popup-content button {
-    background: #dc3545 !important;
-    color: #ffffff !important;
-}
-.popup-content button:hover {
-    background: #a71d2a !important;
-}
-
-/* Back to top */
-#back-to-top {
-    background: #dc3545 !important;
-    color: #ffffff !important;
-}
-#back-to-top:hover {
-    background: #a71d2a !important;
-}
-</style>
-<style>
-/* Flags inside existing language <select> and current flag on the closed control */
-select.lang-select-flags option{
-  background-repeat:no-repeat;background-size:20px 14px;background-position:8px 50%;padding-left:36px;
-}
-select.lang-select-flags{
-  --flag-bg:none;background-image:var(--flag-bg);
-  background-repeat:no-repeat;background-size:20px 14px;background-position:8px 50%;padding-left:36px;
-}
-</style>
-<style>
-  .lang-dropdown {
-    position: fixed; top: 10px; right: 10px; z-index: 2147483647;
-    background: rgba(0,0,0,0.65); backdrop-filter: saturate(1.2) blur(2px);
-    border-radius: 10px; padding: 6px 8px;
-  }
-  .lang-dropdown select {
-    background: transparent; border: 1px solid rgba(255,255,255,0.5);
-    color: #fff; font: 600 13px/1.2 system-ui, Arial, sans-serif;
-    padding: 6px 10px; border-radius: 8px; cursor: pointer;
-  }
-  .lang-dropdown option { color: #000; }
-</style>
-<style>
-#langDropdownWrap{
-  position:fixed; top:10px; right:10px; z-index:2147483647;
-  background:rgba(0,0,0,0.7); border-radius:8px; padding:4px;
-}
-#langDropdown{
-  font-size:14px; padding:4px; border-radius:6px; cursor:pointer;
-}
-</style>
-<style>
-  #langSwitcher{
-    position:fixed; top:10px; left:10px; z-index:2147483647;
-    display:flex; gap:6px; padding:6px 8px;
-    background:rgba(0,0,0,.6); border-radius:12px; backdrop-filter:saturate(1.2) blur(2px);
-  }
-  #langSwitcher button{
-    border:none; cursor:pointer; font:600 12px/1.2 system-ui, Arial, sans-serif;
-    padding:6px 8px; border-radius:8px; color:#fff; background:#444; letter-spacing:.3px;
-  }
-  #langSwitcher button.active{ outline:2px solid rgba(255,255,255,.8); }
-</style>
-<style>
-.flags, .flags-left, .lang-left, .lang-badge, .lang-pill, .lang-chip { display:none !important; }
-</style>
-<style>
+/* === RESET E BASE === */
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',Arial,sans-serif;margin:0;background-image:url(/static/images/roma.jpg);background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-position:center;color:#333}
+
+/* === LINGUA === */
 .lang-selector{position:fixed;top:15px;right:15px;z-index:999999;display:flex;gap:6px;background:rgba(0,0,0,0.8);backdrop-filter:blur(12px);padding:8px 14px;border-radius:50px;border:1px solid rgba(255,255,255,0.15);box-shadow:0 8px 32px rgba(0,0,0,0.4)}
 .lang-btn{background:transparent;border:none;color:#ffffff;padding:6px 14px;border-radius:30px;cursor:pointer;font-size:13px;font-weight:600;transition:all .3s;display:flex;align-items:center;gap:8px}
 .lang-btn .flag{font-size:20px}
 .lang-btn:hover{background:rgba(255,255,255,0.15);color:#fff}
 .lang-btn.active{background:#dc3545;color:#fff;box-shadow:0 4px 12px rgba(220,53,69,0.4)}
+
+/* === WHATSAPP === */
 .whatsapp-float{position:fixed;bottom:30px;right:30px;z-index:999}
 .whatsapp-float a{display:block;width:65px;height:65px;background:#25d366;color:#fff;border-radius:50%;text-align:center;line-height:65px;font-size:35px;box-shadow:0 6px 20px rgba(37,211,102,0.4);transition:all .3s;text-decoration:none;position:relative;animation:pulse 2s infinite}
 .whatsapp-float a:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,0.6)}
 .whatsapp-float .whatsapp-tooltip{position:absolute;bottom:80px;right:0;background:rgba(0,0,0,0.8);color:#fff;padding:8px 14px;border-radius:8px;font-size:13px;white-space:nowrap;opacity:0;transition:opacity .3s;pointer-events:none}
 .whatsapp-float a:hover .whatsapp-tooltip{opacity:1}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.4)}70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* === NAVIGAZIONE === */
 nav{display:flex;justify-content:center;background:rgba(0,0,0,0.7);padding:15px;position:absolute;top:0;left:0;width:100%;z-index:100;flex-wrap:wrap}
 nav a{color:#fff;text-decoration:none;padding:10px 15px;margin:0 5px;font-weight:bold;border-radius:5px;transition:background .3s;font-size:14px}
 nav a:hover{background:#dc3545}
+
+/* === HERO === */
 #hero{height:600px;background:center/cover no-repeat;position:relative;display:flex;align-items:center;justify-content:center;color:#fff;transition:background-image 1s ease-in-out;background-attachment:fixed}
 .hero-content{text-align:center;background:rgba(0,0,0,0.5);padding:30px 40px;border-radius:16px;max-width:90%}
 .hero-content h1{color:#fff;font-size:2.5em;margin-bottom:15px}
 .cta-btn{background:#dc3545;color:#fff;padding:14px 30px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block;transition:all .3s}
 .cta-btn:hover{background:#a71d2a;transform:translateY(-2px)}
-section{padding:40px 20px;max-width:1100px;margin:20px auto;background:rgba(255,255,255,0.92);border-radius:12px;backdrop-filter:blur(4px)}
+
+/* === SEZIONI === */
+main section{padding:40px 20px;max-width:1100px;margin:20px auto;background:rgba(255,255,255,0.92);border-radius:12px;backdrop-filter:blur(4px)}
 h1,h2,h3{color:#333;text-align:center}
 h2{font-size:2em;margin-bottom:25px;position:relative}
 h2:after{content:"";display:block;width:60px;height:3px;background:#dc3545;margin:10px auto 0}
+
+/* === SERVIZI === */
 .servizi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px}
 .servizio{background:#f7f7f7;padding:20px 15px;border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:all .3s}
 .servizio:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.15)}
@@ -808,9 +77,13 @@ h2:after{content:"";display:block;width:60px;height:3px;background:#dc3545;margi
 .servizio.macchina-caffe i{color:#8b4513}
 .servizio.patio i{color:#28a745}
 .servizio span{font-weight:600;color:#333;font-size:14px}
+
+/* === GALLERIA === */
 .galleria{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
 .galleria img{width:100%;height:280px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform .3s}
 .galleria img:hover{transform:scale(1.03)}
+
+/* === DINTORNI === */
 .dintorni-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 .dintorni-item{background:#f7f7f7;padding:20px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);position:relative;overflow:hidden;text-decoration:none;color:#fff;min-height:250px;display:flex;flex-direction:column;justify-content:flex-end;transition:all .3s}
 .dintorni-item:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.2)}
@@ -823,7 +96,11 @@ h2:after{content:"";display:block;width:60px;height:3px;background:#dc3545;margi
 .dintorni-trastevere{background:url(/static/images/trastevere.jpg) center/cover no-repeat}
 .dintorni-eur-nuvola{background:url(/static/images/eur-nuvola.jpg) center/cover no-repeat}
 .dintorni-laghetto{background:url(/static/images/laghetto.jpg) center/cover no-repeat}
+
+/* === MAPPA === */
 .mappa iframe{width:100%;height:300px;border:none;border-radius:10px}
+
+/* === BOOKING === */
 .prenota-contenuto{display:flex;flex-direction:column;align-items:center;max-width:400px;margin:0 auto;width:100%}
 .prenota-contenuto h3{font-size:2em;color:#333;margin:0}
 .prenota-contenuto h3 span{font-size:14px;color:#777}
@@ -832,12 +109,18 @@ h2:after{content:"";display:block;width:60px;height:3px;background:#dc3545;margi
 .prenota-contenuto input:focus{border-color:#dc3545;outline:none}
 .prenota-contenuto button{width:100%;background:#dc3545;color:#fff;padding:14px;border:none;border-radius:8px;margin-top:16px;font-size:18px;font-weight:bold;cursor:pointer;transition:all .3s}
 .prenota-contenuto button:hover{background:#a71d2a;transform:translateY(-2px)}
+
+/* === RECENSIONI === */
 .recensioni{background:#fafafa;border-left:4px solid #dc3545;padding:15px;margin-bottom:10px;border-radius:6px}
 .recensioni strong{color:#333}
+
+/* === FAQ === */
 .faq-item{background:#f7f7f7;padding:18px;border-radius:10px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
 .faq-item h3{text-align:left;margin-top:0;color:#333;font-size:1.1em}
 .faq-item p,.faq-item li{color:#555}
 .faq-item ul{padding-left:20px;margin:10px 0}
+
+/* === POPUP === */
 .popup{display:none;position:fixed;z-index:1000;padding-top:80px;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.6)}
 .popup-content{background:#fff;margin:auto;padding:30px;border-radius:16px;width:90%;max-width:400px;box-shadow:0 8px 40px rgba(0,0,0,0.3);text-align:center;position:relative;animation:fadeIn .3s}
 .popup-content input{width:100%;padding:10px;margin:8px 0;border:2px solid #e0e0e0;border-radius:8px;font-size:14px}
@@ -848,6 +131,8 @@ h2:after{content:"";display:block;width:60px;height:3px;background:#dc3545;margi
 .close:hover{color:#333}
 .popup-prezzo-sconto{color:#dc3545;font-size:1.8em;font-weight:bold}
 .popup-prezzo-originale{text-decoration:line-through;color:#999;font-size:.9em}
+
+/* === LIGHTBOX === */
 .lightbox{display:none;position:fixed;z-index:1001;padding-top:60px;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.92)}
 .lightbox-content{display:flex;align-items:center;justify-content:center;height:100%;position:relative}
 .lightbox-content img{max-width:90%;max-height:80vh;object-fit:contain;border-radius:8px}
@@ -857,6 +142,8 @@ h2:after{content:"";display:block;width:60px;height:3px;background:#dc3545;margi
 .lightbox-prev:hover,.lightbox-next:hover{background:rgba(0,0,0,0.7)}
 .lightbox-prev{left:16px}
 .lightbox-next{right:16px}
+
+/* === OFFERTA POPUP === */
 .popup-offer{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center;z-index:1001}
 .popup-offer-content{background:#fff;padding:35px;text-align:center;border-radius:16px;max-width:420px;width:90%;position:relative;animation:fadeIn .5s;box-shadow:0 8px 40px rgba(0,0,0,0.3)}
 .popup-offer-content h2{color:#dc3545;margin-top:0;font-size:1.8em}
@@ -865,33 +152,82 @@ h2:after{content:"";display:block;width:60px;height:3px;background:#dc3545;margi
 .close-offer:hover{color:#333}
 .cta-btn-offer{background:#dc3545;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block;transition:all .3s}
 .cta-btn-offer:hover{background:#a71d2a;transform:translateY(-2px)}
+
+/* === CONTATTI === */
 #contatti{text-align:center}
 #contatti p{margin:8px 0;font-size:15px}
 #contatti a{color:#dc3545;text-decoration:none}
 #contatti a:hover{text-decoration:underline}
+
+/* === FORM === */
 #form-contatti,#recensione-form{display:flex;flex-direction:column;gap:12px;max-width:500px;margin:20px auto 0}
 #form-contatti input,#form-contatti textarea,#recensione-form input,#recensione-form textarea{padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;transition:border-color .3s}
 #form-contatti input:focus,#form-contatti textarea:focus,#recensione-form input:focus,#recensione-form textarea:focus{border-color:#dc3545;outline:none}
 #form-contatti button,#recensione-form button{background:#dc3545;color:#fff;padding:12px;border:none;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer;transition:all .3s}
 #form-contatti button:hover,#recensione-form button:hover{background:#a71d2a}
+
+/* === RATING === */
 .rating{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:4px;margin-bottom:10px}
 .rating input{display:none}
 .rating label{font-size:2.5em;color:#ddd;cursor:pointer;transition:color .3s}
 .rating label:hover,.rating label:hover~label,.rating input:checked~label{color:#ffc107}
+
+/* === WIDGET === */
 .recensioni-widget-container{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
 .widget-placeholder{background:#fff;padding:20px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);text-align:center;flex:1 1 200px;max-width:280px}
 .widget-placeholder a{color:#dc3545;text-decoration:none;font-weight:bold}
 .widget-placeholder a:hover{text-decoration:underline}
+
+/* === REGOLE === */
 .regole-container{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
 .regole-item{background:#f7f7f7;padding:20px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.05);flex:1 1 300px}
 .regole-item ul{list-style:none;padding:0}
 .regole-item li{padding:8px 0;border-bottom:1px solid #e0e0e0}
-.regole-item li:last-child{border-bottom:none}
+
+/* === FOOTER === */
 footer{background:rgba(0,0,0,0.85);color:#fff;text-align:center;padding:30px 20px;margin-top:20px}
 .footer-content p{margin:5px 0}
+
+/* === BACK TO TOP === */
 #back-to-top{position:fixed;bottom:100px;right:30px;background:#dc3545;color:#fff;border:none;border-radius:50%;width:50px;height:50px;font-size:24px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all .3s;z-index:100;display:none}
 #back-to-top:hover{transform:scale(1.1);background:#a71d2a}
+
+/* === ANIMAZIONI === */
 @keyframes fadeIn{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+
+/* === CHATBOT === */
+.chatbot-container{position:fixed;bottom:30px;right:30px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end}
+.chatbot-window{display:none;width:370px;max-width:90vw;height:480px;max-height:65vh;background:#fff;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,0.3);flex-direction:column;overflow:hidden;margin-bottom:12px;animation:slideUp .3s ease}
+.chatbot-window.open{display:flex}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+.chatbot-header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+.chatbot-title{font-weight:600;font-size:15px}
+.chatbot-close-btn{background:rgba(255,255,255,0.2);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px;transition:background .3s}
+.chatbot-close-btn:hover{background:rgba(255,255,255,0.3)}
+.chatbot-messages{flex:1;padding:14px 16px;overflow-y:auto;background:#f5f6fa}
+.chatbot-messages::-webkit-scrollbar{width:4px}
+.chatbot-messages::-webkit-scrollbar-thumb{background:#ccc;border-radius:10px}
+.msg{display:flex;gap:10px;margin-bottom:12px;animation:msgIn .3s ease}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.msg.bot{justify-content:flex-start}
+.msg.user{justify-content:flex-end}
+.msg-avatar{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.msg-content{max-width:78%;padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.5;word-wrap:break-word}
+.msg.bot .msg-content{background:#fff;color:#333;border-radius:14px 14px 14px 4px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+.msg.user .msg-content{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:14px 14px 4px 14px}
+.chatbot-input-area{padding:10px 14px;background:#fff;border-top:1px solid #eee;display:flex;gap:8px;flex-shrink:0}
+.chatbot-input{flex:1;padding:10px 14px;border:2px solid #e8e8e8;border-radius:10px;font-size:14px;outline:none;transition:border-color .3s}
+.chatbot-input:focus{border-color:#667eea}
+.chatbot-send-btn{width:42px;height:42px;border:none;border-radius:10px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;font-size:18px;cursor:pointer;transition:transform .2s;flex-shrink:0}
+.chatbot-send-btn:hover{transform:scale(1.05)}
+.chatbot-toggle-btn{width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);border:none;cursor:pointer;box-shadow:0 6px 25px rgba(102,126,234,0.5);transition:transform .3s;position:relative;display:flex;align-items:center;justify-content:center}
+.chatbot-toggle-btn:hover{transform:scale(1.08)}
+.robot-icon{font-size:30px;animation:jump 1.8s ease-in-out infinite}
+@keyframes jump{0%,100%{transform:translateY(0) rotate(0deg)}30%{transform:translateY(-14px) rotate(-6deg)}50%{transform:translateY(-8px) rotate(6deg)}70%{transform:translateY(-14px) rotate(-6deg)}}
+.pulse-ring{position:absolute;width:100%;height:100%;border-radius:50%;background:rgba(102,126,234,0.3);animation:ring 2.5s ease-out infinite;top:0;left:0}
+@keyframes ring{0%{transform:scale(1);opacity:0.7}100%{transform:scale(1.7);opacity:0}}
+
+/* === RESPONSIVE === */
 @media(max-width:768px){
     .lang-selector{top:10px;right:10px;padding:6px 10px;gap:4px;flex-wrap:wrap}
     .lang-btn{font-size:11px;padding:4px 10px}
@@ -901,7 +237,7 @@ footer{background:rgba(0,0,0,0.85);color:#fff;text-align:center;padding:30px 20p
     #hero{height:400px;background-attachment:scroll}
     .hero-content h1{font-size:1.6em}
     .hero-content{padding:20px}
-    section{padding:20px 12px;margin:12px}
+    main section{padding:20px 12px;margin:12px}
     h2{font-size:1.5em}
     .galleria img{height:200px}
     .servizi{grid-template-columns:repeat(2,1fr)}
@@ -910,6 +246,10 @@ footer{background:rgba(0,0,0,0.85);color:#fff;text-align:center;padding:30px 20p
     .dintorni-grid{grid-template-columns:1fr}
     .whatsapp-float{bottom:20px;right:20px}
     .whatsapp-float a{width:55px;height:55px;line-height:55px;font-size:28px}
+    .chatbot-container{bottom:20px;right:16px}
+    .chatbot-window{width:92vw;height:55vh;position:fixed;bottom:85px;right:10px}
+    .chatbot-toggle-btn{width:54px;height:54px}
+    .robot-icon{font-size:26px}
 }
 @media(max-width:480px){
     .servizi{grid-template-columns:1fr 1fr}
@@ -923,10 +263,15 @@ footer{background:rgba(0,0,0,0.85);color:#fff;text-align:center;padding:30px 20p
     .whatsapp-float{bottom:15px;right:15px}
     .whatsapp-float a{width:48px;height:48px;line-height:48px;font-size:24px}
     .whatsapp-float .whatsapp-tooltip{display:none}
+    .chatbot-container{bottom:15px;right:12px}
+    .chatbot-window{width:95vw;height:50vh;bottom:75px;right:8px}
+    .chatbot-toggle-btn{width:48px;height:48px}
+    .robot-icon{font-size:22px}
 }
 </style>
 </head>
 <body>
+
 <!-- CHATBOT -->
 <div class="chatbot-container">
     <div class="chatbot-window" id="chatbotWindow">
@@ -953,6 +298,7 @@ footer{background:rgba(0,0,0,0.85);color:#fff;text-align:center;padding:30px 20p
         <span class="pulse-ring"></span>
     </button>
 </div>
+
 <!-- Language Selector con FLAG -->
 <div class="lang-selector" id="langSelector">
     <button class="lang-btn active" data-lang="it"><span class="flag">🇮🇹</span> IT</button>
@@ -961,200 +307,239 @@ footer{background:rgba(0,0,0,0.85);color:#fff;text-align:center;padding:30px 20p
     <button class="lang-btn" data-lang="ru"><span class="flag">🇷🇺</span> RU</button>
     <button class="lang-btn" data-lang="zh"><span class="flag">🇨🇳</span> ZH</button>
 </div>
-<header id="hero">
-    <nav>
-        <a data-translate="nav_descrizione" href="#descrizione">Descrizione</a>
-        <a data-translate="nav_servizi" href="#servizi">Servizi</a>
-        <a data-translate="nav_galleria" href="#galleria">Galleria</a>
-        <a data-translate="nav_dintorni" href="#dintorni">Dintorni</a>
-        <a data-translate="nav_recensioni" href="#recensioni">Recensioni</a>
-        <a data-translate="nav_contatti" href="#contatti">Contatti</a>
-    </nav>
-    <div class="hero-content">
-        <h1 data-translate="hero_title">Accogliente attico con terrazzo panoramico</h1>
-        <p data-translate="hero_subtitle">Confort e vista mozzafiato su Roma</p>
-        <a class="cta-btn" href="#booking-box" data-translate="hero_button">Prenota ora</a>
-    </div>
-</header>
-<section id="descrizione">
-    <h2 data-translate="sec_descrizione">Descrizione dell'alloggio</h2>
-    <p data-translate="descr_par1">Benvenuti nel nostro accogliente attico con terrazzo panoramico a Roma, situato al 7º piano di un edificio tranquillo nei pressi del quartiere EUR. Luminoso e accogliente, l'alloggio è la soluzione ideale per chi cerca un soggiorno straordinario in una zona residenziale e sicura, lontano dal caos della città ma a pochi minuti dai principali punti di interesse. L'attico è arredato con gusto e offre tutti i comfort per rendere la tua vacanza o il tuo viaggio di lavoro indimenticabile.</p>
-</section>
-<section id="servizi">
-    <h2 data-translate="sec_servizi">Servizi dell'attico</h2>
-    <div class="servizi">
-        <div class="servizio wifi"><i class="fas fa-wifi"></i><span data-translate="srv_wifi">Wi-Fi veloce</span></div>
-        <div class="servizio aria-condizionata"><i class="fas fa-snowflake"></i><span data-translate="srv_aria">Aria condizionata</span></div>
-        <div class="servizio cucina"><i class="fas fa-utensils"></i><span data-translate="srv_cucina">Cucina attrezzata</span></div>
-        <div class="servizio lavatrice"><i class="fas fa-tshirt"></i><span data-translate="srv_lavatrice">Lavatrice</span></div>
-        <div class="servizio parcheggio"><i class="fas fa-parking"></i><span data-translate="srv_parcheggio">Parcheggio gratuito</span></div>
-        <div class="servizio tv"><i class="fas fa-tv"></i><span data-translate="srv_tv">TV a schermo piatto</span></div>
-        <div class="servizio ascensore"><i class="fas fa-building"></i><span data-translate="srv_ascensore">Ascensore</span></div>
-        <div class="servizio bollitore"><i class="fas fa-mug-hot"></i><span data-translate="srv_bollitore">Bollitore</span></div>
-        <div class="servizio macchina-caffe"><i class="fas fa-coffee"></i><span data-translate="srv_caffe">Macchina del caffè</span></div>
-        <div class="servizio patio"><i class="fas fa-door-open"></i><span data-translate="srv_patio">Patio o balcone privato</span></div>
-    </div>
-</section>
-<section id="mappa">
-    <h2>Posizione</h2>
-    <div class="mappa">
-        <iframe src="https://www.google.com/maps?q=via+guido+ascoli+fonte+laurentina+roma&output=embed" allowfullscreen loading="lazy" title="Mappa della posizione dell'attico a Roma"></iframe>
-    </div>
-</section>
-<section id="galleria">
-    <h2 data-translate="sec_galleria">Galleria fotografica</h2>
-    <div class="galleria">
-        <img loading="lazy" src="/static/images/image1.jpg" alt="Foto 1">
-        <img loading="lazy" src="/static/images/image2.jpg" alt="Foto 2">
-        <img loading="lazy" src="/static/images/image3.jpg" alt="Foto 3">
-        <img loading="lazy" src="/static/images/image4.jpg" alt="Foto 4">
-        <img loading="lazy" src="/static/images/image5.jpg" alt="Foto 5">
-        <img loading="lazy" src="/static/images/image6.jpg" alt="Foto 6">
-        <img loading="lazy" src="/static/images/image7.jpg" alt="Foto 7">
-        <img loading="lazy" src="/static/images/image8.jpg" alt="Foto 8">
-        <img loading="lazy" src="/static/images/image9.jpg" alt="Foto 9">
-    </div>
-</section>
-<section id="dintorni">
-    <h2 data-translate="sec_dintorni">Cosa fare nei dintorni</h2>
-    <div class="dintorni-grid">
-        <a class="dintorni-item dintorni-colosseo" href="https://www.google.com/search?q=colosseo+roma" target="_blank">
-            <div class="dintorni-item-content">
-                <h3 data-translate="d1_t">Il Colosseo</h3>
-                <p data-translate="d1_p">A soli 20 minuti di autobus.</p>
-            </div>
-        </a>
-        <a class="dintorni-item dintorni-piazza-navona" href="https://www.google.com/search?q=piazza+navona+roma" target="_blank">
-            <div class="dintorni-item-content">
-                <h3 data-translate="d2_t">Piazza Navona</h3>
-                <p data-translate="d2_p">A 30 minuti a piedi o in autobus.</p>
-            </div>
-        </a>
-        <a class="dintorni-item dintorni-trastevere" href="https://www.google.com/search?q=quartiere+trastevere+roma" target="_blank">
-            <div class="dintorni-item-content">
-                <h3 data-translate="d3_t">Quartiere Trastevere</h3>
-                <p data-translate="d3_p">15 minuti con i mezzi pubblici.</p>
-            </div>
-        </a>
-        <a class="dintorni-item dintorni-eur-nuvola" href="https://www.google.com/search?q=nuvola+eur+roma" target="_blank">
-            <div class="dintorni-item-content">
-                <h3 data-translate="d4_t">La Nuvola dell'EUR</h3>
-                <p data-translate="d4_p">10 minuti in auto o bus.</p>
-            </div>
-        </a>
-        <a class="dintorni-item dintorni-laghetto" href="https://www.google.com/search?q=laghetto+eur+roma" target="_blank">
-            <div class="dintorni-item-content">
-                <h3 data-translate="d5_t">Laghetto dell'EUR</h3>
-                <p data-translate="d5_p">10 minuti a piedi.</p>
-            </div>
-        </a>
-    </div>
-</section>
-<section id="recensioni">
-    <h2 data-translate="sec_recensioni">Recensioni degli ospiti</h2>
-    <div class="recensioni">
-        <strong>Marco</strong> ⭐⭐⭐⭐⭐
-        <p data-translate="rev_1">Bellissimo attico, pulito e con vista spettacolare! Tornerò sicuramente.</p>
-    </div>
-    <div class="recensioni">
-        <strong>Giulia</strong> ⭐⭐⭐⭐
-        <p data-translate="rev_2">Posizione comoda, host gentile e disponibile.</p>
-    </div>
-    <div class="recensioni">
-        <strong>Luca</strong> ⭐⭐⭐⭐⭐
-        <p data-translate="rev_3">Tutto perfetto! Il terrazzo è il punto forte della casa.</p>
-    </div>
-    <h3 data-translate="recensione_lascia">Lascia la tua recensione</h3>
-    <form id="recensione-form">
-        <div class="rating">
-            <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stelle"></label>
-            <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stelle"></label>
-            <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stelle"></label>
-            <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stelle"></label>
-            <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 stella"></label>
+
+<!-- MAIN CONTENT -->
+<main>
+    <header id="hero">
+        <nav>
+            <a data-translate="nav_descrizione" href="#descrizione">Descrizione</a>
+            <a data-translate="nav_servizi" href="#servizi">Servizi</a>
+            <a data-translate="nav_galleria" href="#galleria">Galleria</a>
+            <a data-translate="nav_dintorni" href="#dintorni">Dintorni</a>
+            <a data-translate="nav_recensioni" href="#recensioni">Recensioni</a>
+            <a data-translate="nav_contatti" href="#contatti">Contatti</a>
+        </nav>
+        <div class="hero-content">
+            <h1 data-translate="hero_title">Accogliente attico con terrazzo panoramico</h1>
+            <p data-translate="hero_subtitle">Confort e vista mozzafiato su Roma</p>
+            <a class="cta-btn" href="#booking-box" data-translate="hero_button">Prenota ora</a>
         </div>
-        <input data-ph-key="rec_ph_nome" id="nome-recensione" placeholder="Il tuo nome" type="text">
-        <textarea data-ph-key="rec_ph_testo" id="testo-recensione" placeholder="Scrivi qui la tua recensione..."></textarea>
-        <button type="submit" data-translate="rec_invia">Invia recensione</button>
-    </form>
-</section>
-<section id="recensioni-esterne">
-    <h2 data-translate="ext_reviews_title">Dicono di noi</h2>
-    <p data-translate="ext_reviews_subtitle">Leggi le recensioni verificate dei nostri ospiti su altre piattaforme.</p>
-    <div class="recensioni-widget-container">
-        <div class="widget-placeholder">
-            <h3 data-translate="ext_reviews_airbnb">Recensioni Airbnb</h3>
-            <p>⭐ 4.97 / 5</p>
-            <a data-translate="ext_reviews_read_more_airbnb" href="https://www.airbnb.it/" target="_blank">Leggi di più su Airbnb</a>
+    </header>
+
+    <section id="descrizione">
+        <h2 data-translate="sec_descrizione">Descrizione dell'alloggio</h2>
+        <p data-translate="descr_par1">Benvenuti nel nostro accogliente attico con terrazzo panoramico a Roma, situato al 7º piano di un edificio tranquillo nei pressi del quartiere EUR. Luminoso e accogliente, l'alloggio è la soluzione ideale per chi cerca un soggiorno straordinario in una zona residenziale e sicura, lontano dal caos della città ma a pochi minuti dai principali punti di interesse. L'attico è arredato con gusto e offre tutti i comfort per rendere la tua vacanza o il tuo viaggio di lavoro indimenticabile.</p>
+    </section>
+
+    <section id="servizi">
+        <h2 data-translate="sec_servizi">Servizi dell'attico</h2>
+        <div class="servizi">
+            <div class="servizio wifi"><i class="fas fa-wifi"></i><span data-translate="srv_wifi">Wi-Fi veloce</span></div>
+            <div class="servizio aria-condizionata"><i class="fas fa-snowflake"></i><span data-translate="srv_aria">Aria condizionata</span></div>
+            <div class="servizio cucina"><i class="fas fa-utensils"></i><span data-translate="srv_cucina">Cucina attrezzata</span></div>
+            <div class="servizio lavatrice"><i class="fas fa-tshirt"></i><span data-translate="srv_lavatrice">Lavatrice</span></div>
+            <div class="servizio parcheggio"><i class="fas fa-parking"></i><span data-translate="srv_parcheggio">Parcheggio gratuito</span></div>
+            <div class="servizio tv"><i class="fas fa-tv"></i><span data-translate="srv_tv">TV a schermo piatto</span></div>
+            <div class="servizio ascensore"><i class="fas fa-building"></i><span data-translate="srv_ascensore">Ascensore</span></div>
+            <div class="servizio bollitore"><i class="fas fa-mug-hot"></i><span data-translate="srv_bollitore">Bollitore</span></div>
+            <div class="servizio macchina-caffe"><i class="fas fa-coffee"></i><span data-translate="srv_caffe">Macchina del caffè</span></div>
+            <div class="servizio patio"><i class="fas fa-door-open"></i><span data-translate="srv_patio">Patio o balcone privato</span></div>
         </div>
-        <div class="widget-placeholder">
-            <h3 data-translate="ext_reviews_booking">Recensioni Booking.com</h3>
-            <p>⭐ 9.7 / 10</p>
-            <a data-translate="ext_reviews_read_more_booking" href="https://www.booking.com/" target="_blank">Leggi di più su Booking</a>
+    </section>
+
+    <section id="mappa">
+        <h2>Posizione</h2>
+        <div class="mappa">
+            <iframe src="https://www.google.com/maps?q=via+guido+ascoli+fonte+laurentina+roma&output=embed" allowfullscreen loading="lazy" title="Mappa della posizione dell'attico a Roma"></iframe>
         </div>
-        <div class="widget-placeholder">
-            <h3 data-translate="ext_reviews_google">Recensioni Google</h3>
-            <p>⭐ 4.9 / 5</p>
-            <a data-translate="ext_reviews_read_more_google" href="https://www.google.com/search?q=attico+via+guido+ascoli+roma" target="_blank">Leggi di più su Google</a>
+    </section>
+
+    <section id="galleria">
+        <h2 data-translate="sec_galleria">Galleria fotografica</h2>
+        <div class="galleria">
+            <img loading="lazy" src="/static/images/image1.jpg" alt="Foto 1">
+            <img loading="lazy" src="/static/images/image2.jpg" alt="Foto 2">
+            <img loading="lazy" src="/static/images/image3.jpg" alt="Foto 3">
+            <img loading="lazy" src="/static/images/image4.jpg" alt="Foto 4">
+            <img loading="lazy" src="/static/images/image5.jpg" alt="Foto 5">
+            <img loading="lazy" src="/static/images/image6.jpg" alt="Foto 6">
+            <img loading="lazy" src="/static/images/image7.jpg" alt="Foto 7">
+            <img loading="lazy" src="/static/images/image8.jpg" alt="Foto 8">
+            <img loading="lazy" src="/static/images/image9.jpg" alt="Foto 9">
         </div>
-    </div>
-</section>
-<section id="regole">
-    <h2 data-translate="sec_regole">Regole della casa</h2>
-    <div class="regole-container">
-        <div class="regole-item">
-            <h3 data-translate="house_rules_title">Regole della Casa</h3>
+    </section>
+
+    <section id="dintorni">
+        <h2 data-translate="sec_dintorni">Cosa fare nei dintorni</h2>
+        <div class="dintorni-grid">
+            <a class="dintorni-item dintorni-colosseo" href="https://www.google.com/search?q=colosseo+roma" target="_blank">
+                <div class="dintorni-item-content">
+                    <h3 data-translate="d1_t">Il Colosseo</h3>
+                    <p data-translate="d1_p">A soli 20 minuti di autobus.</p>
+                </div>
+            </a>
+            <a class="dintorni-item dintorni-piazza-navona" href="https://www.google.com/search?q=piazza+navona+roma" target="_blank">
+                <div class="dintorni-item-content">
+                    <h3 data-translate="d2_t">Piazza Navona</h3>
+                    <p data-translate="d2_p">A 30 minuti a piedi o in autobus.</p>
+                </div>
+            </a>
+            <a class="dintorni-item dintorni-trastevere" href="https://www.google.com/search?q=quartiere+trastevere+roma" target="_blank">
+                <div class="dintorni-item-content">
+                    <h3 data-translate="d3_t">Quartiere Trastevere</h3>
+                    <p data-translate="d3_p">15 minuti con i mezzi pubblici.</p>
+                </div>
+            </a>
+            <a class="dintorni-item dintorni-eur-nuvola" href="https://www.google.com/search?q=nuvola+eur+roma" target="_blank">
+                <div class="dintorni-item-content">
+                    <h3 data-translate="d4_t">La Nuvola dell'EUR</h3>
+                    <p data-translate="d4_p">10 minuti in auto o bus.</p>
+                </div>
+            </a>
+            <a class="dintorni-item dintorni-laghetto" href="https://www.google.com/search?q=laghetto+eur+roma" target="_blank">
+                <div class="dintorni-item-content">
+                    <h3 data-translate="d5_t">Laghetto dell'EUR</h3>
+                    <p data-translate="d5_p">10 minuti a piedi.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="recensioni">
+        <h2 data-translate="sec_recensioni">Recensioni degli ospiti</h2>
+        <div class="recensioni">
+            <strong>Marco</strong> ⭐⭐⭐⭐⭐
+            <p data-translate="rev_1">Bellissimo attico, pulito e con vista spettacolare! Tornerò sicuramente.</p>
+        </div>
+        <div class="recensioni">
+            <strong>Giulia</strong> ⭐⭐⭐⭐
+            <p data-translate="rev_2">Posizione comoda, host gentile e disponibile.</p>
+        </div>
+        <div class="recensioni">
+            <strong>Luca</strong> ⭐⭐⭐⭐⭐
+            <p data-translate="rev_3">Tutto perfetto! Il terrazzo è il punto forte della casa.</p>
+        </div>
+        <h3 data-translate="recensione_lascia">Lascia la tua recensione</h3>
+        <form id="recensione-form">
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stelle"></label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stelle"></label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stelle"></label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stelle"></label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 stella"></label>
+            </div>
+            <input data-ph-key="rec_ph_nome" id="nome-recensione" placeholder="Il tuo nome" type="text">
+            <textarea data-ph-key="rec_ph_testo" id="testo-recensione" placeholder="Scrivi qui la tua recensione..."></textarea>
+            <button type="submit" data-translate="rec_invia">Invia recensione</button>
+        </form>
+    </section>
+
+    <section id="recensioni-esterne">
+        <h2 data-translate="ext_reviews_title">Dicono di noi</h2>
+        <p data-translate="ext_reviews_subtitle">Leggi le recensioni verificate dei nostri ospiti su altre piattaforme.</p>
+        <div class="recensioni-widget-container">
+            <div class="widget-placeholder">
+                <h3 data-translate="ext_reviews_airbnb">Recensioni Airbnb</h3>
+                <p>⭐ 4.97 / 5</p>
+                <a data-translate="ext_reviews_read_more_airbnb" href="https://www.airbnb.it/" target="_blank">Leggi di più su Airbnb</a>
+            </div>
+            <div class="widget-placeholder">
+                <h3 data-translate="ext_reviews_booking">Recensioni Booking.com</h3>
+                <p>⭐ 9.7 / 10</p>
+                <a data-translate="ext_reviews_read_more_booking" href="https://www.booking.com/" target="_blank">Leggi di più su Booking</a>
+            </div>
+            <div class="widget-placeholder">
+                <h3 data-translate="ext_reviews_google">Recensioni Google</h3>
+                <p>⭐ 4.9 / 5</p>
+                <a data-translate="ext_reviews_read_more_google" href="https://www.google.com/search?q=attico+via+guido+ascoli+roma" target="_blank">Leggi di più su Google</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="regole">
+        <h2 data-translate="sec_regole">Regole della casa</h2>
+        <div class="regole-container">
+            <div class="regole-item">
+                <h3 data-translate="house_rules_title">Regole della Casa</h3>
+                <ul>
+                    <li data-translate="no_smoking">Non è consentito fumare all'interno.</li>
+                    <li data-translate="no_parties">Non è possibile organizzare feste.</li>
+                    <li data-translate="turn_off_ac">Spegni l'aria condizionata quando esci.</li>
+                </ul>
+            </div>
+            <div class="regole-item">
+                <h3 data-translate="welcome_guide">Guida di Benvenuto</h3>
+                <ul>
+                    <li data-translate="checkin_instructions"><strong>Istruzioni Check-in:</strong> Dettagli inviati via email il giorno prima.</li>
+                    <li data-translate="emergency_numbers"><strong>Numeri Utili:</strong> Emergenza 112</li>
+                    <li data-translate="tips"><strong>Consigli:</strong> Visita il Ristorante Osteria Sanmarzano.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2 data-translate="faq_title">Domande Frequenti</h2>
+        <div class="faq-item">
+            <h3 data-translate="faq_q1_title">1. Tassa di soggiorno: cos'è e come si paga?</h3>
+            <p data-translate="faq_q1_body">A Roma è obbligatoria la tassa di soggiorno. L'importo varia a seconda della tipologia di alloggio e deve essere pagato in contanti all'arrivo.</p>
+        </div>
+        <div class="faq-item">
+            <h3 data-translate="faq_q2_title">2. Cosa posso fare per muovermi in città?</h3>
             <ul>
-                <li data-translate="no_smoking">Non è consentito fumare all'interno.</li>
-                <li data-translate="no_parties">Non è possibile organizzare feste.</li>
-                <li data-translate="turn_off_ac">Spegni l'aria condizionata quando esci.</li>
+                <li data-translate="faq_q2_metro">Metro: Linea B, fermata Laurentina.</li>
+                <li data-translate="faq_q2_bus">Autobus e Tram: Rete molto estesa.</li>
+                <li data-translate="faq_q2_taxi">Taxi: App FreeNow o Radiotaxi 06 3570.</li>
+                <li data-translate="faq_q2_bike">Bici e Monopattini: Lime e Helbiz.</li>
             </ul>
         </div>
-        <div class="regole-item">
-            <h3 data-translate="welcome_guide">Guida di Benvenuto</h3>
+        <div class="faq-item">
+            <h3 data-translate="faq_q3_title">3. Ci sono regole di comportamento o consigli utili?</h3>
             <ul>
-                <li data-translate="checkin_instructions"><strong>Istruzioni Check-in:</strong> Dettagli inviati via email il giorno prima.</li>
-                <li data-translate="emergency_numbers"><strong>Numeri Utili:</strong> Emergenza 112</li>
-                <li data-translate="tips"><strong>Consigli:</strong> Visita il Ristorante Osteria Sanmarzano.</li>
+                <li data-translate="faq_q3_water">Acqua potabile dalle fontanelle.</li>
+                <li data-translate="faq_q3_monuments">Rispettare i monumenti.</li>
+                <li data-translate="faq_q3_dress">Abbigliamento nei luoghi di culto.</li>
             </ul>
         </div>
-    </div>
-</section>
-<section id="faq">
-    <h2 data-translate="faq_title">Domande Frequenti</h2>
-    <div class="faq-item">
-        <h3 data-translate="faq_q1_title">1. Tassa di soggiorno: cos'è e come si paga?</h3>
-        <p data-translate="faq_q1_body">A Roma è obbligatoria la tassa di soggiorno. L'importo varia a seconda della tipologia di alloggio e deve essere pagato in contanti all'arrivo.</p>
-    </div>
-    <div class="faq-item">
-        <h3 data-translate="faq_q2_title">2. Cosa posso fare per muovermi in città?</h3>
-        <ul>
-            <li data-translate="faq_q2_metro">Metro: Linea B, fermata Laurentina.</li>
-            <li data-translate="faq_q2_bus">Autobus e Tram: Rete molto estesa.</li>
-            <li data-translate="faq_q2_taxi">Taxi: App FreeNow o Radiotaxi 06 3570.</li>
-            <li data-translate="faq_q2_bike">Bici e Monopattini: Lime e Helbiz.</li>
-        </ul>
-    </div>
-    <div class="faq-item">
-        <h3 data-translate="faq_q3_title">3. Ci sono regole di comportamento o consigli utili?</h3>
-        <ul>
-            <li data-translate="faq_q3_water">Acqua potabile dalle fontanelle.</li>
-            <li data-translate="faq_q3_monuments">Rispettare i monumenti.</li>
-            <li data-translate="faq_q3_dress">Abbigliamento nei luoghi di culto.</li>
-        </ul>
-    </div>
-</section>
-<section id="booking-box">
-    <div class="prenota-contenuto">
-        <h3>€120 <span data-translate="price_night">/ notte</span></h3>
-        <p data-translate="guests_info">Ospiti: fino a un massimo di 3 persone</p>
-        <label data-translate="dates_title">Seleziona le date:</label>
-        <input id="calendar-input" data-ph-key="dates_placeholder" placeholder="Seleziona le date" type="text">
-        <label data-translate="guests_label">Ospiti (Max 3):</label>
-        <input id="ospiti" max="3" min="1" type="number" value="1" aria-label="Numero di ospiti">
-        <button id="btnPrenota" data-translate="hero_button">Prenota ora</button>
-    </div>
-</section>
+    </section>
+
+    <section id="booking-box">
+        <div class="prenota-contenuto">
+            <h3>€120 <span data-translate="price_night">/ notte</span></h3>
+            <p data-translate="guests_info">Ospiti: fino a un massimo di 3 persone</p>
+            <label data-translate="dates_title">Seleziona le date:</label>
+            <input id="calendar-input" data-ph-key="dates_placeholder" placeholder="Seleziona le date" type="text">
+            <label data-translate="guests_label">Ospiti (Max 3):</label>
+            <input id="ospiti" max="3" min="1" type="number" value="1" aria-label="Numero di ospiti">
+            <button id="btnPrenota" data-translate="hero_button">Prenota ora</button>
+        </div>
+    </section>
+
+    <section id="contatti">
+        <h2 data-translate="sec_contatti">Contatti</h2>
+        <p>📍 Indirizzo: Via Guido Ascoli, Fonte Laurentina, Roma</p>
+        <p>📞 Telefono: <a href="tel:+393714737368">+39 371 4737368</a></p>
+        <p>✉ Email: <a href="mailto:katia.popova13@gmail.com">katia.popova13@gmail.com</a></p>
+        
+        <h3 data-translate="contatto_modulo">Modulo di contatto</h3>
+        <form id="form-contatti">
+            <input data-ph-key="ph_nome" name="nome" placeholder="Il tuo nome" type="text">
+            <input data-ph-key="ph_email" name="email" placeholder="La tua email" type="email">
+            <textarea data-ph-key="ph_messaggio" name="messaggio" placeholder="Il tuo messaggio" rows="4"></textarea>
+            <button type="submit" data-translate="contatto_invia">Invia messaggio</button>
+        </form>
+    </section>
+</main>
+
+<!-- WHATSAPP -->
+<div class="whatsapp-float">
+    <a href="https://wa.me/393294915013?text=Salve%2C%20vorrei%20informazioni%20sul%20vostro%20attico%20a%20Roma" target="_blank" aria-label="Chatta su WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chatta con noi!</span>
+    </a>
+</div>
+
+<!-- OFFERTA POPUP -->
 <div class="popup-offer" id="offer-popup">
     <div class="popup-offer-content">
         <span class="close-offer" id="btnCloseOffer">×</span>
@@ -1163,6 +548,8 @@ footer{background:rgba(0,0,0,0.85);color:#fff;text-align:center;padding:30px 20p
         <a class="cta-btn-offer" href="#booking-box" id="btnApplyOffer" data-translate="offer_cta">Approfitta dell'offerta</a>
     </div>
 </div>
+
+<!-- POPUP PRENOTAZIONE -->
 <div class="popup" id="popup">
     <div class="popup-content">
         <span class="close" id="btnChiudiPopup">×</span>
@@ -1183,6 +570,8 @@ footer{background:rgba(0,0,0,0.85);color:#fff;text-align:center;padding:30px 20p
         </form>
     </div>
 </div>
+
+<!-- LIGHTBOX -->
 <div class="lightbox" id="myLightbox">
     <span class="lightbox-close">×</span>
     <div class="lightbox-content">
@@ -1191,38 +580,22 @@ footer{background:rgba(0,0,0,0.85);color:#fff;text-align:center;padding:30px 20p
         <button class="lightbox-next">›</button>
     </div>
 </div>
-<section id="contatti">
-    <h2 data-translate="sec_contatti">Contatti</h2>
-    <p>📍 Indirizzo: Via Guido Ascoli, Fonte Laurentina, Roma</p>
-    <p>📞 Telefono: <a href="tel:+393714737368">+39 371 4737368</a></p>
-    <p>✉ Email: <a href="mailto:katia.popova13@gmail.com">katia.popova13@gmail.com</a></p>
-    <!-- WHATSAPP -->
-    <div class="whatsapp-float">
-        <a href="https://wa.me/393294915013?text=Salve%2C%20vorrei%20informazioni%20sul%20vostro%20attico%20a%20Roma" target="_blank" aria-label="Chatta su WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-            <span class="whatsapp-tooltip">Chatta con noi!</span>
-        </a>
-    </div>
-    <h3 data-translate="contatto_modulo">Modulo di contatto</h3>
-    <form id="form-contatti">
-        <input data-ph-key="ph_nome" name="nome" placeholder="Il tuo nome" type="text">
-        <input data-ph-key="ph_email" name="email" placeholder="La tua email" type="email">
-        <textarea data-ph-key="ph_messaggio" name="messaggio" placeholder="Il tuo messaggio" rows="4"></textarea>
-        <button type="submit" data-translate="contatto_invia">Invia messaggio</button>
-    </form>
-</section>
+
 <footer>
     <div class="footer-content">
         <p>© 2025 Attico Roma. Tutti i diritti riservati.</p>
         <p>Realizzato con amore a Roma ❤️</p>
     </div>
 </footer>
+
 <button id="back-to-top">↑</button>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_green.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.4.0/ical.min.js"></script>
+
 <script>
 (function() {
     "use strict";
@@ -1942,6 +1315,6 @@ footer{background:rgba(0,0,0,0.85);color:#fff;text-align:center;padding:30px 20p
     });
 })();
 </script>
-    <script src="/static/js/chatbot.js"></script>
+<script src="/static/js/chatbot.js"></script>
 </body>
 </html>

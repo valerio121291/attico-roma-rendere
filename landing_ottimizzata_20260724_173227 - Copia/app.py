@@ -8,12 +8,23 @@ app = Flask(__name__)
 # === HEADER DI SICUREZZA ===
 @app.after_request
 def add_security_headers(response):
-    response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://maps.googleapis.com https://www.google.com https://generativelanguage.googleapis.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; img-src 'self' data: https://maps.gstatic.com; frame-src https://www.google.com; connect-src 'self' https://generativelanguage.googleapis.com;"
+    """Aggiunge header di sicurezza per proteggere il sito"""
+    response.headers['Content-Security-Policy'] = "default-src 'self'; " \
+        "script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://maps.googleapis.com https://www.google.com https://generativelanguage.googleapis.com https://www.googletagmanager.com; " \
+        "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; " \
+        "img-src 'self' data: https://maps.gstatic.com https://www.google.com; " \
+        "font-src 'self' data: https://cdnjs.cloudflare.com https://fonts.gstatic.com; " \
+        "frame-src https://www.google.com; " \
+        "connect-src 'self' https://generativelanguage.googleapis.com https://cdnjs.cloudflare.com; " \
+        "media-src 'self'; " \
+        "object-src 'none'"
+    
     response.headers['Strict-Transport-Security'] = 'max-age=63072000; includeSubDomains; preload'
     response.headers['X-Content-Type-Options'] = 'nosniff'
     response.headers['X-Frame-Options'] = 'SAMEORIGIN'
     response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
     response.headers['Permissions-Policy'] = 'geolocation=(), microphone=(), camera=()'
+    
     return response
 
 # === CONFIG EMAIL ===
